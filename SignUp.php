@@ -22,7 +22,7 @@
         align-items: center;
         justify-content: center;
         height: 100vh;
-        background-color: #24232a;
+        background-color: #ffc9be;
     }
     .a::before{
         content: "";
@@ -40,7 +40,7 @@
         position: absolute;
         width: 300px;
         height: 420px;
-        background: linear-gradient(0deg, transparent, #2376f5, #2376f5);
+        background: linear-gradient(0deg, transparent, #1bfd00, #1bfd00);
         top: -50%;
         left: -50%;
         transform-origin: bottom right;
@@ -55,12 +55,37 @@
     .b{
         position : absolute;
         inset: 3px;
-        background: #24232a;
+        background: #fff8be;
         border-radius: 8px;
         z-index: 10;
-        padding: 50px 40px;
+        padding: 30px 40px;
         display: flex;
         flex-direction: column;
+    }
+    .b h2{
+        color: #000;
+        text-align: center;
+        letter-spacing: 3px;
+    }
+    .c{
+        position: relative;
+        width: 300px;
+        margin-top: 35px;
+    }
+    .c input{
+        padding: 10px 10px 10px;
+        border-color: #000;
+        background: transparent;
+        border-left: none;
+        border-right: none;
+        border-top: none;
+        font-size: 18px;
+        outline: none;
+        color: #000;
+    }
+    input[type="submit"]{
+        border: 1px solid #000;
+        cursor: pointer;
     }
     </style>
 </head>
