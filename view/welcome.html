@@ -17,12 +17,18 @@
             margin-right: auto;
             width: 870px;
             margin: 60px auto;
-            padding: 20px;
+            padding: 10px;
             font-family: Arial, sans-serif;
             background-color: #F9FAFB;
             border : 1px solid #ddd;
             border-radius: 10px;
             box-shadow: o 2px 4px rgba(0, 0, 0, 0.01);
+        }
+        div div{
+            background-color: #F9FAFB;
+            padding: 0px;
+            margin: 0px;
+            border:0px;
         }
         ul {
             list-style-type: none;
@@ -32,29 +38,47 @@
         .li {
             display: inline;
             margin-right: 15px;
+            padding: 10px;
         }
         .detail li{
         list-style-type: circle;
+
         }
         a {
+            padding-left: 10px;
             text-decoration: none;
             color: #2563eb;
+            font-size: 25px;
+            font-weight:450 ;
+        }
+        div div ul{
+            
+            margin-top:30px;
+            
         }
         p {
             font-size: 18px;
             line-height: 1.6;
             color: #111827;
         }
+        img {
+            width: 100px;
+            height: 100px;
+            border-radius:20%;
+        }
     </style>
 </head>
 <body>
     <div>
-        <div>
-        <image src="..\src\1.png" alt="logo" width="100px" height="100px">
+    <div>
+        <img src="..\src\1.png" alt="logo" >
         <ul>
             <li class="li"><a href="login.php">Log in</a></li>
             <li class="li"><a href="signup.php">Sign up</a></li>
-        </ul></div><br><br><br>
+        </ul>
+        </div>
+        <br>
+
         <h1> You wanna learn programming with some fun ?</h1>
         <p>Welcome to our programming learning site! Here, you'll learn programming in a fun and engaging way so fun, in fact, that you'll never find learning boring again!</p>
         <h3>Why Choose Us</h3>
@@ -79,5 +103,20 @@
             <source src="https://www.youtube.com/watch?v=2X8j1a4b9e0" type="video/mp4">
             Your browser does not support the video tag.
     </div>
+    <script>
+    let buttons = document.querySelectorAll(".li");
+
+buttons.forEach(function(button) {
+    button.addEventListener("mouseover", function() {
+        button.style.background = "#C0FFC0"; 
+        button.style.borderRadius = "20px";
+        button.style.transition = "background 0.3s ease";
+    });
+
+    button.addEventListener("mouseout", function() {
+        button.style.background = ""; 
+    });
+});
+    </script>
 </body>
 </html>
