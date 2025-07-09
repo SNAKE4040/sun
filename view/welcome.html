@@ -37,7 +37,7 @@
         }
         .li {
             display: inline;
-            margin-right: 15px;
+            margin-right: 20px;
             padding: 10px;
         }
         .detail li{
@@ -53,7 +53,7 @@
         }
         div div ul{
             
-            margin-top:30px;
+            margin-top:20px;
             
         }
         p {
@@ -62,8 +62,8 @@
             color: #111827;
         }
         img {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             border-radius:20%;
         }
     </style>
@@ -108,14 +108,20 @@
 
 buttons.forEach(function(button) {
     button.addEventListener("mouseover", function() {
-        button.style.background = "#C0FFC0"; 
+         const link = button.querySelector("a");
+         link.style.color = "#fff";
+       
+
+        button.style.background = "#B0FFB0"; 
         button.style.borderRadius = "20px";
         button.style.transition = "background 0.3s ease";
-        button.style.color = "#fff";
+        
     });
 
     button.addEventListener("mouseout", function() {
         button.style.background = ""; 
+         const link = button.querySelector("a");
+         link.style.color = "";
     });
 });
     </script>
