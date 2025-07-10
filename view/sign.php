@@ -92,11 +92,6 @@
         border-radius: 10px;
         padding : 10px 6px 10px 6px;
     }
-    .c input[type="email"]{
-        border: 1px solid #000;
-       
-    }
-    
 
     </style>
 </head>
@@ -106,13 +101,13 @@
             <div class="b">
                 <h2>Sign Up</h2>
                 <div class="c">
-                    <input type="text" name="nom" placeholder="Nom Complet">
+                    <input type="text" name="nom" id="nom" placeholder="Nom Complet">
                 </div>
                 <div class="c">
-                    <input type="password" name="password" placeholder="Mot de passe">
+                    <input type="email" name="email" id="email" placeholder="Email">
                 </div>
                 <div class="c">
-                    <input type="email" name="email" placeholder="Email">
+                    <input type="password" name="password" id="password" placeholder="Mot de passe">
                 </div>
                 <div class="c">
                     <input type="submit" value="Sign Up" name="signup">
@@ -128,27 +123,40 @@ const nomField = document.querySelector('.c input[type="text"]');
 const form = document.querySelector('form');
 
 submitBtn.addEventListener('click', function(e) {
-    e.preventDefault(); // Emp�che la soumission automatique
+    e.preventDefault(); // Emp�che la soumission automatique
 
-    const nomValid = /^[A-Z][a-z]+/.test(nomField.value);
+    const nomValid = /^([A-Za-zÀ-ÖØ-öø-ÿ]+(?:[-\s][A-Za-zÀ-ÖØ-öø-ÿ]+)*)$/.test(nomField.value.trim());
     const passwordValid = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(passwordField.value);
     const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value);
 
+    if (nomField.value.trim() === "") {
+    alert("Le champ Nom Complet est obligatoire");
+    nomField.focus();
+    return;
+}
+
+
     if (!nomValid) {
+        let a=document.getElementById("nom");
+        alert('Nom Complet non valide : la première lettre doit étre une majuscule');
+        a.value = "";
+        a.focus();
         
-        alert('Nom Complet non valide : la premi�re lettre doit �tre une majuscule');
-        form.reset();
-    } else if (!passwordValid) {
-        
-        alert('Mot de passe non valide : au moins 8 caract�res, une lettre et un chiffre');
-        form.reset();
     } else if (!emailValid) {
-        
+        let b =document.getElementById("email");
         alert('Email non valide : il doit contenir "@" et "."');
-        form.reset();
+        b.value ="";
+        b.focus();
+
+    } else if (!passwordValid) {
+        let c =document.getElementById("password");
+        alert('Mot de passe non valide : au moins 8 caractères, une lettre et un chiffre');
+        c.value ="";
+        c.focus()
+
     } else {
         
-        alert('Inscription r�ussie !');
+        alert('Inscription rèussie !');
         form.submit();
     }
 });
