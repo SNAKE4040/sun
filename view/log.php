@@ -108,7 +108,7 @@
 <body>
  
         <div class="a">
-         <form action="" method="post">
+         <form action="../control/controller.php" method="post">
             <div class="b">
                 <h2>LOG IN</h2>
                 <div class="c">
@@ -124,26 +124,9 @@
             </form>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/@fingerprintjs/fingerprintjs@3/dist/fp.min.js"></script>
+<script src="./js/fct.js"></script>
 <script>
-btn = document.querySelector('input[type="submit"]');
-btn.addEventListener('click', function (event) {
-  event.preventDefault();
-
-  FingerprintJS.load().then(fp => {
-    fp.get().then(result => {
-      const visitorId = result.visitorId;
-
-      fetch('admin.php', {
-        method: 'POST',
-        body: JSON.stringify({ device_id: visitorId }),
-        headers: { 'Content-Type': 'application/json' }
-      });
-
-      // ✅ Now visitorId is defined, so window can open correctly
-      window.open('admin.php?device_id=' + visitorId, '_blank', 'width=400,height=400,scrollbars=yes,resizable=yes');
-    });
-  });
-});
+send_ad();
 </script>
         
 </body>

@@ -97,7 +97,7 @@
 </head>
 <body>
         <div class="a">
-         <form action="" method="post">
+         <form action="../control/controller.php" method="post">
             <div class="b">
                 <h2>Sign Up</h2>
                 <div class="c">
