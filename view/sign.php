@@ -7,7 +7,7 @@
     <style>
     .a{
         margin: 0 ;
-        padding: 0;
+        padding: 20px;
         box-sizing: border-box;
         font-family: "poppins", sans-serif;
         position: relative;
@@ -16,13 +16,14 @@
         background: #030013;
         border-radius: 8px;
         overflow: hidden;
+
     }
     body{
         display: flex;
         align-items: center;
         justify-content: center;
         height: 100vh;
-        background-color: #ffc9be;
+        background-color: #F0F0FF;/*#ffc9be;*/
     }
     .a::before{
         content: "";
@@ -39,8 +40,8 @@
         content: "";
         position: absolute;
         width: 300px;
-        height: 420px;
-        background: linear-gradient(0deg, transparent, #1bfd00, #1bfd00);
+        height: 460px;
+        background: linear-gradient(0deg, transparent, #26fdfa, #1bfd00);
         top: -50%;
         left: -50%;
         transform-origin: bottom right;
@@ -55,12 +56,14 @@
     .b{
         position : absolute;
         inset: 3px;
-        background: #fff8be;
+        background:#FfFFFf;/* #fff8be;*/
         border-radius: 8px;
         z-index: 10;
         padding: 30px 40px;
         display: flex;
         flex-direction: column;
+
+        
     }
     .b h2{
         color: #000;
@@ -70,27 +73,36 @@
     .c{
         position: relative;
         width: 300px;
-        margin-top: 35px;
+        margin-top: 30px;
+
     }
     .c input{
-        padding: 10px 10px 10px;
-        border-color: #000;
+        padding: 6px 4px 10px;
+        
         background: transparent;
-        border-left: none;
-        border-right: none;
-        border-top: none;
+        
         font-size: 18px;
         outline: none;
         color: #000;
     }
     input[type="submit"]{
-        border: 1px solid #000;
+        /*border: 1px solid #000;*/
         cursor: pointer;
+        background: #93eeda;
+        border-radius: 10px;
+        padding : 10px 6px 10px 6px;
     }
+    .c input[type="email"]{
+        border: 1px solid #000;
+       
+    }
+    
+
     </style>
 </head>
 <body>
         <div class="a">
+         <form action="" method="post">
             <div class="b">
                 <h2>Sign Up</h2>
                 <div class="c">
@@ -106,6 +118,55 @@
                     <input type="submit" value="Sign Up" name="signup">
                 </div>
             </div>
+            </form>
         </div>
+        <script>
+            const submitBtn = document.querySelector('.c input[type="submit"]');
+const emailField = document.querySelector('.c input[type="email"]');
+const passwordField = document.querySelector('.c input[type="password"]');
+const nomField = document.querySelector('.c input[type="text"]');
+const form = document.querySelector('form');
+
+submitBtn.addEventListener('click', function(e) {
+    e.preventDefault(); // Empêche la soumission automatique
+
+    const nomValid = /^[A-Z][a-z]+/.test(nomField.value);
+    const passwordValid = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(passwordField.value);
+    const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value);
+
+    if (!nomValid) {
+        
+        alert('Nom Complet non valide : la première lettre doit être une majuscule');
+        form.reset();
+    } else if (!passwordValid) {
+        
+        alert('Mot de passe non valide : au moins 8 caractères, une lettre et un chiffre');
+        form.reset();
+    } else if (!emailValid) {
+        
+        alert('Email non valide : il doit contenir "@" et "."');
+        form.reset();
+    } else {
+        
+        alert('Inscription réussie !');
+        form.submit();
+    }
+});
+submitBtn.addEventListener('mouseover', () => {
+    const nomValid = /^[A-Z][a-z]+/.test(nomField.value);
+    const passwordValid = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(passwordField.value);
+    const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value);
+
+    if (nomValid && passwordValid && emailValid) {
+        submitBtn.style.background = '#0adc20'; 
+    } else {
+        submitBtn.style.background = '#fe7b0d'; 
+    }
+});
+submitBtn.addEventListener('mouseout', () => {
+    submitBtn.style.background = '#93eeda';
+    });
+
+        </script>
 </body>
 </html>
