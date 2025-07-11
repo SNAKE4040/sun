@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-   
     .a{
         margin: 0 ;
         padding: 20px;
@@ -24,7 +23,7 @@
         align-items: center;
         justify-content: center;
         height: 100vh;
-        background-color: #FfFFFf;/*#ffc9be;*/
+        background-color: #FfFFFf;
     }
     .a::before{
         content: "";
@@ -57,7 +56,7 @@
     .b{
         position : absolute;
         inset: 3px;
-        background:#F0F0FF;/* #fff8be;*/
+        background:#F0F0FF;
         border-radius: 8px;
         z-index: 10;
         padding: 30px 40px;
@@ -98,7 +97,6 @@
     }
     .c input[type="email"]{
         border: 1px solid #000;
-       
     }
     
     
@@ -106,9 +104,9 @@
     </style>
 </head>
 <body>
- 
+
         <div class="a">
-         <form action="../control/controller.php" method="post">
+        <form action="../control/controller.php" method="post">
             <div class="b">
                 <h2>LOG IN</h2>
                 <div class="c">
