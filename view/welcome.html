@@ -111,10 +111,10 @@
 
 buttons.forEach(function(button) {
     button.addEventListener("mouseover", function() {
-         const link = button.querySelector("a");
-         link.style.color = "#fff";
-       
+        const link = button.querySelector("a");
+        link.style.color = "#fff";
 
+        
         button.style.background = "#B0FFB0"; 
         button.style.borderRadius = "20px";
         button.style.transition = "background 0.3s ease";
@@ -123,8 +123,8 @@ buttons.forEach(function(button) {
 
     button.addEventListener("mouseout", function() {
         button.style.background = ""; 
-         const link = button.querySelector("a");
-         link.style.color = "";
+        const link = button.querySelector("a");
+        link.style.color = "";
     });
 });
     </script>

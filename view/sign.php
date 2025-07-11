@@ -125,20 +125,39 @@ const form = document.querySelector('form');
 submitBtn.addEventListener('click', function(e) {
     e.preventDefault(); // Emp�che la soumission automatique
 
-    const nomValid = /^([A-Za-zÀ-ÖØ-öø-ÿ]+(?:[-\s][A-Za-zÀ-ÖØ-öø-ÿ]+)*)$/.test(nomField.value.trim());
-    const passwordValid = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(passwordField.value);
-    const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value);
+    const nom = nomField.value.trim();
+    const email = emailField.value.trim();
+    const password = passwordField.value.trim();
 
-    if (nomField.value.trim() === "") {
+    const validChars = /^([A-Za-zÀ-ÖØ-öø-ÿ_ ]+)$/.test(nom);
+
+    const mots = nom.split(" ");
+    let allStartWithCapital = true;
+    for (let mot of mots) {
+        const subMots = mot.split("_");
+        for (let sub of subMots) {
+            if (!/^[A-ZÀ-Ý]/.test(sub)) {
+                allStartWithCapital = false;
+                break;
+            }
+        }
+    }
+
+    const nomValid = validChars && allStartWithCapital;
+
+    const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    const passwordValid = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password);
+
+    if (nom === "") {
     alert("Le champ Nom Complet est obligatoire");
     nomField.focus();
     return;
 }
 
 
-    if (!nomValid) {
+    else if (!nomValid) {
         let a=document.getElementById("nom");
-        alert('Nom Complet non valide : la première lettre doit étre une majuscule');
+        alert('Nom Complet non valide : la première lettre de chaque mot doit étre une majuscule');
         a.value = "";
         a.focus();
         
@@ -161,7 +180,7 @@ submitBtn.addEventListener('click', function(e) {
     }
 });
 submitBtn.addEventListener('mouseover', () => {
-    const nomValid = /^[A-Z][a-z]+/.test(nomField.value);
+    const nomValid = /^([A-Za-zÀ-ÖØ-öø-ÿ]+(?:[-\s][A-Za-zÀ-ÖØ-öø-ÿ]+)*)$/.test(nomField.value.trim());
     const passwordValid = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(passwordField.value);
     const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value);
 
