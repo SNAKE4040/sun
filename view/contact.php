@@ -29,8 +29,8 @@
         }
 
         .top-half img {
-            width: 100%;
-            height: 100%;
+            width: 1280px;
+            height: 400px;
             object-fit: cover;
             display: block;
         }
@@ -81,7 +81,7 @@
 
     <div class="container">
         <div class="top-half">
-            <img src="../src/10.jpeg" alt="">
+            <img src="../src/12.png" alt="">
         </div>
         <div class="bottom-half">
             <div class="content">
