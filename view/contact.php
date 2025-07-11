@@ -81,7 +81,7 @@
 
     <div class="container">
         <div class="top-half">
-            <img src="../src/10.jpeg" alt="">
+            <img src="../src/12.png" alt="">
         </div>
         <div class="bottom-half">
             <div class="content">
