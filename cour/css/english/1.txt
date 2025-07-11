@@ -1,0 +1,54 @@
+<h1>Intoduction:</h1>
+CSS is an abbreviation of Cascading Style Sheet, a language used for styling and interacting with web pages, debugged with browsers.
+<h2> how we can use it </h2>
+<h3>first way </h3>
+<div>
+we can write in a css file like <b>style.css</b> and link it with a <b> link </b> HTML tag .
+<div class="exp">
+ <span class="hbalise"> &lt;link </span> href="style.css" rel="stylesheet"<span class="hbalise">&gt</span>;
+ #href put in their location of the css file or her name if in the same folder.
+</div>
+</div>
+<h3>second way </h3>
+<div>
+we can write his code in a html HTML tag named style<br>
+<b>example:</b>
+<div class="exp">
+  <span class="hbalise"> &lt;/style&gt;</span>
+    code css
+  <span class="hbalise"> &lt;/style&gt;</span>
+</div>
+</div>
+<h3>third way</h3>
+<div>
+we can add it also in the HTML tag html with attribue named style .
+<div class="exp">
+<span class="hbalise"> &lt;p</span> class="paragraph" style="css code" <span class="hbalise">&gt;</span>
+#here we syle a HTML tag p with class paragraph .
+</div>
+</div>
+<h3>&#128064; Bonus For you &#128071; : </h3>
+<div> the first way use if u have a lot of page with like a same style.
+ Seconde for a lot of HTML tag with something linked can get a just one HTML tag but stell for lot .
+ third for a spécifique HTML tag in html just one .
+exp :
+<b>style.css</b>
+<div class="exp">
+p{color:red;}
+</div>
+<b>css in style HTML tag </b> 
+<div class="exp">
+ <span class="hbalise"> &lt;/style&gt;</span>
+    p.{color :yellow}
+  <span class="hbalise"> &lt;/style&gt;.</span>
+</div>
+<b> in the HTML tag want style it </b>
+<div class="exp">
+<span class="hbalise"> &lt;p </span> class="paragraph" style="color:green" <span class="hbalise"> &gt</span>; text in paragraphe <span class="hbalise"> &lt;/p&gt</span>
+</div>
+<b> output</b>
+<p class="paragraph" style="color:green"> text in paragraphe </p>
+in this example we show you a HTML tag styled with the tree methode but only three way was applicade this for how css work 
+have a order the first do if in the HTML tag if doesnt go to ---->style HTML tag if doesn't go to --->css file .
+</div>
+ 
