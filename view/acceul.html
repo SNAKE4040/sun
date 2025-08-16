@@ -76,7 +76,14 @@
             height: 0.25rem;
             background: white;
             opacity: 1;
-    }   
+        }
+        .swiper-slide::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.2));
+            z-index: 1;
+        }
     .menu ul li a:hover {
         color: #000;
         background-color: #B0FFB0;
@@ -99,11 +106,71 @@
         line-height: 1.6;
         border-radius: 8px;
     }
+    .intro {
+        animation: fadeUp 1s ease-in-out;
+    }
+    @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .logo {
+        margin-right: auto;
+        display: flex;
+        align-items: center;
+    }
+
+    .logo img {
+        height: 45px;
+        width: auto;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .name {
+        font-size: 1.6rem;          
+        font-weight: 700;            
+        margin-left: 12px;          
+        background: linear-gradient(90deg, #00B4DB, #0083B0); 
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: 2px;         
+        text-transform: uppercase;   
+        font-family: 'Segoe UI', sans-serif;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 119, 182, 0.9);
+    color: white;
+    text-align: center;
+    padding: 0.7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+footer .socials img {
+    width: 20px;
+    margin: 0 10px;
+}
+
     </style>
 </head>
 <body>
 
     <nav class="menu">
+        <div class="logo">
+            <img src="../src/1.png" alt="Logo">
+            <span class="name">Seren</span>
+        </div>
         <ul>
             <li><a href="#">LESSONS</a></li>
             <li><a href="#">PROFILE</a></li>
@@ -124,6 +191,14 @@
         </div>
         <div class="swiper-pagination"></div>
     </div>
+    <footer>
+    <p>© 2025 SEREN. All rights reserved</p>
+    <div class="socials">
+        <a href="#"><img src="facebook.svg" alt="Facebook"></a>
+        <a href="#"><img src="github.svg" alt="GitHub"></a>
+        <a href="#"><img src="linkedin.svg" alt="LinkedIn"></a>
+    </div>
+</footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 

@@ -29,8 +29,8 @@
         }
 
         .top-half img {
-            width: 1280px;
-            height: 400px;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
             display: block;
         }
