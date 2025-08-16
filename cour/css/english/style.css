@@ -1,0 +1,29 @@
+ body {
+          font-family: Arial, sans-serif;
+          background-color: #f5f5dc;
+          color: #333;
+          margin: 0;
+          padding: 20px;
+        }
+        .cour {
+          text-align: center;
+          color: blue;
+          font-family: Courier, monospace;
+          font-size: 2em;
+        }
+        p{
+          font-size: 1.2em;
+          line-height: 1.5;
+          margin-left: 20px;
+        }
+        .exp {
+            background-color: #eee;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #ccc;
+            font-family: monospace;
+        }
+	      .cmt{
+	          color: #6A9955; 
+            font-style: italic;
+	      }

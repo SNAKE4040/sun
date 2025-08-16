@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../cour/css/english/style.css">
+    </head>
+<body>
+<h1 class="cour">CSS</h1>
+
+<h1>Course 1: CSS Basics</h1>
+<p>In this part, we will learn the basics of <b>CSS</b>. We will cover the following topics:</p>
+<ul>
+<li>CSS syntax</li>
+<li>CSS selectors</li>
+<li>CSS units</li>
+<li>CSS comments</li>
+</ul>
+
+<h2>CSS Syntax</h2>
+<p>CSS has a special syntax, like any programming language. First, we use a selector to target the element we want to style (we will explain selectors in the next section).  
+Then, we open curly braces "{}" <b>(used in external and internal CSS, not in inline CSS)</b> and write one or more property-value pairs.  
+A property defines the style type, and the value defines how it should appear.  
+To make it simple, write the property, followed by a colon ":", then the value.  
+<b>Example:</b></p>
+<div class="exp">
+    <code>&lt;style&gt;<br>
+    p { color: blue; }<br>
+    &lt;/style&gt;</code>
+</div>
+
+<h2>CSS Selectors</h2>
+<p>There are many types of selectors, but the three main ones are: tag, class, and ID.  
+Selectors are used to target specific parts of a page. Let’s explain each type:</p>
+
+<h3>Tags</h3>
+<p>Tag selectors target all elements of a specific type. For example, to style all paragraphs, use the tag name "p".</p>
+<div class="exp">
+    <code>&lt;style&gt;<br>
+    p { color: blue; }<br>
+    &lt;/style&gt;</code>
+</div>
+
+<h3>Classes</h3>
+<p>Class selectors target elements with the same class attribute.  
+Unlike tags, which select all elements of that type, classes allow you to style specific groups.  
+To use a class, add a dot "." before the class name.  
+Example: for a class named "container":</p>
+<div class="exp">
+    <code>&lt;style&gt;<br>
+    .container { width: 200px; }<br>
+    &lt;/style&gt;</code>
+</div>
+
+<h3>ID</h3>
+<p>ID selectors target a specific element.  
+Use the "#" character before the ID name.  
+Example: a paragraph with id="blue":</p>
+<div class="exp">
+    <code>&lt;style&gt;<br>
+    #bleu { background-color: blue; }<br>
+    &lt;/style&gt;</code>
+</div>
+
+<h2>CSS Units</h2>
+<p>CSS units are divided into <b>relative</b> and <b>absolute</b> units. They are used for sizing, positioning, or spacing.</p>
+
+<spam class="question">What are relative units?</spam>
+<spam class="answer">Relative units change depending on the screen size, parent element, or font size.</spam>
+
+<h3>Relative units</h3>
+<ul>
+<li><b>em:</b> Relative to the font size of the element.</li>
+<li><b>rem:</b> Relative to the root font size (html element).</li>
+<li><b>vh:</b> Relative to 1% of the viewport height.</li>
+<li><b>vw:</b> Relative to 1% of the viewport width.</li>
+<li><b>vmax:</b> Based on the larger side of the viewport.</li>
+<li><b>vmin:</b> Based on the smaller side of the viewport.</li>
+<li><b>% (percentage):</b> Relative to the parent element.</li>
+<li><b>ch:</b> Based on the width of the "0" character.</li>
+<li><b>ex:</b> Based on the x-height of lowercase letters.</li>
+</ul>
+
+<p>Absolute units are fixed and do not depend on other elements or screen size.</p>
+<spam class="question">What are absolute units?</spam>
+<spam class="answer">Units that have a fixed size regardless of other elements or the viewport.</spam>
+
+<ul>
+<li><b>px:</b> Pixels.</li>
+<li><b>cm:</b> Centimeters (1 cm = 37.8px).</li>
+<li><b>mm:</b> Millimeters (1 mm = 3.78px).</li>
+<li><b>in:</b> Inches (1 in = 96px).</li>
+<li><b>pt:</b> Points (1 pt = 1.33px).</li>
+<li><b>pc:</b> Picas (1 pc = 16px).</li>
+</ul>
+
+<h2>CSS Comments</h2>
+<p>CSS comments are written like this: /* comment */.  
+They are ignored by the browser and used to explain or temporarily disable code.</p>
+
+<div class="exp">
+    <code>&lt;style&gt;<br>
+    #bleu { background-color: blue; 
+    <div class="cmt">/* this is a comment */</div>
+    }<br>
+    &lt;/style&gt;</code>
+</div>
+
+<div class="exp">
+    <code>&lt;style&gt;<br>
+    #bleu { background-color: blue; 
+    <div class="cmt">/* background color of #bleu */</div>
+    }<br>
+    &lt;/style&gt;</code>
+</div>
+
+<div class="exp">
+    <code>&lt;style&gt;<br>
+    #bleu { background-color: blue; 
+    <div class="cmt">/* height: 50%; ignored because default height applies */</div>
+    }<br>
+    &lt;/style&gt;</code>
+</div>
+
+<h2>🎁 Bonus Tip:</h2>
+
+<h4>CSS Selectors</h4>
+<p>CSS follows a cascade principle: IDs have the highest priority, then classes, then tags.</p>
+
+<h4>CSS Units</h4>
+<p>Use absolute units for precise elements like borders or small images, and relative units for layout and responsiveness.</p>
+</body>
+</html>
