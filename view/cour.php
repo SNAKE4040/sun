@@ -85,7 +85,7 @@ we will explain it more in the next table</p>
 <tr><td class="tbl_2_1">[href $="btn"]</td><td class="tbl_2_2">traget to all tage have val of attribue href end with "btn" like  href="secandry-pramary-btn" </td><tr>
 <tr><td class="tbl_2_1">[href ~="btn"]</td><td class="tbl_2_2">traget to all tage have the word "btn"  in in attribue href like  href="secandry-pramary btn" not  href="secandry-pramary-btn" should be separate by espace</td><tr>
 <tr><td class="tbl_2_1">[href *="btn"]</td><td class="tbl_2_2"> traget to all tage have the word "btn"  in in attribue href like  href="secandry-pramary btn" or  href="secandry-pramary-btn" or  href="secandry-pramarybtn" just should be doesn't matter if separate by espace or not </td><tr>
-<tr><td class="tbl_2_1">[href |="btn"]</td><td class="tbl_2_2">traget to all tags have href="btn" or strart with "btn-" like href="btn-danger"</td><tr>
+<tr><td class="tbl_2_1_d">[href |="btn"]</td><td class="tbl_2_2_d">traget to all tags have href="btn" or strart with "btn-" like href="btn-danger"</td><tr>
 </table>
 </div>
 <h2>pseudo-class attribue </h2>
@@ -122,7 +122,7 @@ we will explain it more in the next table</p>
 <tr><td class="tbl_2_1"> :active</td><td class="tbl_2_2"> traget the tag when we click on it </td><tr>
 <tr><td class="tbl_2_1"> :focus</td><td class="tbl_2_2">work when the tag was focus like in the input text </td><tr>
 <tr><td class="tbl_2_1"> :focus-within</td><td class="tbl_2_2"> work if it focus or their children</td><tr>
-<tr><td class="tbl_2_1"> :focus-visible</td><td class="tbl_2_2"> It only appears when using the keyboard or assistive technologies (good for blind people)</td><tr>
+<tr><td class="tbl_2_1_d"> :focus-visible</td><td class="tbl_2_2_d"> It only appears when using the keyboard or assistive technologies (good for blind people)</td><tr>
 </table>
 </div>
 <p> we will explain of the user action more in the next table</p>
@@ -137,7 +137,7 @@ we will explain it more in the next table</p>
 <tr><td class="tbl_2_1"> nth-last-type(n)</td><td class="tbl_2_2"> the same for nth-type(n) but she start with last to the first</td><tr>
 <tr><td class="tbl_2_1"> :only-child</td><td class="tbl_2_2"> work if only it's child</td><tr>
 <tr><td class="tbl_2_1"> :only-of-type</td><td class="tbl_2_2"> work if element of its type in the parent</td><tr>
-<tr><td class="tbl_2_1"> :empty</td><td class="tbl_2_2"> work if the elemnt have no children</td><tr>
+<tr><td class="tbl_2_1_d"> :empty</td><td class="tbl_2_2_d"> work if the elemnt have no children</td><tr>
 </table>
 </div>
 <p>next we will explain of form & input state in the next table</p>
@@ -154,7 +154,7 @@ we will explain it more in the next table</p>
 <tr><td class="tbl_2_1"> :in-range</td><td class="tbl_2_2"> -  targets inputs whose current value is within the allowed range.</td><tr>
 <tr><td class="tbl_2_1"> :out-of-range</td><td class="tbl_2_2"> - targets inputs whose value is outside the allowed range.</td><tr>
 <tr><td class="tbl_2_1"> :read-only</td><td class="tbl_2_2"> - targets inputs whose can't write in them just read (have a default value in the general)</td><tr>
-<tr><td class="tbl_2_1"> :read-write</td><td class="tbl_2_2">  targets inputs whose can write and read it</td><tr>
+<tr><td class="tbl_2_1_d"> :read-write</td><td class="tbl_2_2_d">  targets inputs whose can write and read it</td><tr>
 </table>
 </div>
 <p>next we will explain of <b>UI state<b> in the next table</p>
@@ -164,7 +164,7 @@ we will explain it more in the next table</p>
 <tr><td class="tbl_2_1"> :is()</td><td class="tbl_2_2"> tragets tag have in bakets ()</td><tr>
 <tr><td class="tbl_2_1"> :where()</td><td class="tbl_2_2"> the same of is() but without specificity</td><tr>
 <tr><td class="tbl_2_1"> :has</td><td class="tbl_2_2"> tragets who have the element in brakets in them</td><tr>
-<tr><td class="tbl_2_1"> :not()</td><td class="tbl_2_2">tragets tags diffrents the one have in the brakets ()  </td><tr>
+<tr><td class="tbl_2_1_d"> :not()</td><td class="tbl_2_2_d">tragets tags diffrents the one have in the brakets ()  </td><tr>
 </table>
 </div>
 <h2> pseudo-element selector </h2>
@@ -199,7 +199,7 @@ we will explain it more in the next table</p>
 <tr><td class="tbl_2_1"> ::placeholder</td><td class="tbl_2_2">  styles the placeholder of inputs</td><tr>
 <tr><td class="tbl_2_1"> ::selection</td><td class="tbl_2_2">  styles the text selected by user</td><tr>
 <tr><td class="tbl_2_1"> ::marker</td><td class="tbl_2_2">  styles the bullet or numbering symbol of list</td><tr>
-<tr><td class="tbl_2_1"> ::file-selector-button</td><td class="tbl_2_2"> styles the button of "input type="file"</td><tr>
+<tr><td class="tbl_2_1_d"> ::file-selector-button</td><td class="tbl_2_2_d"> styles the button of "input type="file"</td><tr>
 </table>
 </div>
 
@@ -224,7 +224,7 @@ we will explain it more in the next table</p>
 <tr><td class="tbl_2_1"> space </td><td class="tbl_2_2"> Any nested child (no mater if child of child)</td><tr>
 <tr><td class="tbl_2_1"> > </td><td class="tbl_2_2"> Only direct children</td><tr>
 <tr><td class="tbl_2_1"> ~ </td><td class="tbl_2_2"> Next sibling only</td><tr>
-<tr><td class="tbl_2_1"> + </td><td class="tbl_2_2"> All following siblings</td><tr>
+<tr><td class="tbl_2_1_d"> + </td><td class="tbl_2_2_d"> All following siblings</td><tr>
 </table>
 </div> 
 <div class="exp">
