@@ -1,0 +1,9 @@
+<div class="tbl_area">
+ <table class="tbl_2">
+ <tr><td class="tbl_2_h"> symbol</td><td class="tbl_2_2_h">explication</td></tr>
+<tr><td class="tbl_2_1"> </td><td class="tbl_2_2"> </td><tr>
+<tr><td class="tbl_2_1"> </td><td class="tbl_2_2"> </td><tr>
+<tr><td class="tbl_2_1"> </td><td class="tbl_2_2"> </td><tr>
+<tr><td class="tbl_2_1"> </td><td class="tbl_2_2"> </td><tr>
+</table>
+</div>
