@@ -1,0 +1,31 @@
+<h1 class="cour">HTML</h1>
+
+<h1>Introduction:</h1>
+
+<h2> Welcome to HTML </h2>
+<p> Welcome to the world of HTML <b>(HyperText Markup Language)</b> the foundation of every website you see on the internet. wheter you are learning web development for the first time or looking to strengthen your skills, HTML <b>is the perfect place to begin</b></p>.
+
+<h2> What is HTML? </h2>
+<p>HTML is a <b> markup language that defines the structure of a web page. it  uses elements, called tags, to organize content such as text, images, links, and multimedia. while <b> CSS</b> controls the style and Javascript adds interactivity, HTML provides the essential framework on which everything is built. 
+
+<h2> Importance of HTML in Web Development >/h2>
+<p> Without HTML, we pages simply cannot exist. it is the skeleton of the web: </p>
+<div class="exp">
+    <ul>
+        <li> It organizes and structures content.</li>
+        <li> It allows to display text, images, and media correctly.</li>
+     	<li> It integrates with CSS and Javascript to create interactive , user-friendly websites.</li>
+    </ul>	
+</div>
+<p> In short, HTML is the first step toward becoming a <b>web developer</b>.</p>
+
+<h2> A Brief History of HTML </h2>
+<p> HTML was created in <b>1991 by Tim Berners-Lee</b>, the inventor of the World Wide Web, since then, it has evolved through multiple versions, from the early HTML 2.0 to the modern <b>HTML5</b>, which powers today's dynamic, mobile-friendly websites with support for audio, video, and advanced graphics.</p>
+
+<h2>Getting Started with HTML</h2>
+<p> The best part of HTML is its simplicity . to get started, all you need is:<p>
+<ol>
+    <li><b> A text editor</b>(like VS Code, Sublime Text, or Notepad).</li>
+    <li><b> A web browser</b>(like chrome, Firefox, or edge).</li>
+</ol>
+<p>✨ With just a few lines of code, you can create your first web page and see it live in your browser!</p>
