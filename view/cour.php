@@ -184,9 +184,6 @@ we will explain it more in the next table</p>
      }<br>
      
     &lt;/style&gt;</code>
-<div>
-
-
 </div>
 <p>will explain them all in the next table</p>
 <div class="tbl_area">
