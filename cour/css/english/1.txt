@@ -15,7 +15,7 @@
     <p>You can write CSS code directly inside your HTML file within a &lt;style&gt; tag, usually placed inside the &lt;head&gt; section.</p>
     <div class="exp">
         <code>&lt;style&gt;<br>
-        p { color: blue; }<br>
+        p { color: blue; }<br><br>
         &lt;/style&gt;</code>
     </div>
 

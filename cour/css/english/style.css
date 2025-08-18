@@ -27,22 +27,19 @@
 	          color: #6A9955; 
             font-style: italic;
 	      }
-        .tbl_area{
-          /* background-color: #b1f493; */
-        }
         .tbl_2{
-           background-color: #b1f493;
-          /* border: 2px solid #626262;  */
+          background-color: #eee;
           margin-left: auto;
           margin-right: auto;
           width: 80%;
           border-radius: 20px;
+          margin-top: 20px;
+          margin-bottom: 20px;
         }
         .tbl_2_h{
          
           text-align: center;
-           /* border: 1px solid #626262; */
-           background-color: #049f2b;
+           background-color:#e8e4e4;
           font-weight: bold;
           width: 20%;
           font-size: 18px;
@@ -52,8 +49,7 @@
 
         .tbl_2_2_h{
           text-align: center;
-          /* border: 1px solid #626262; */
-          background-color: #049f2b;
+          background-color:#e8e4e4;
           font-weight: bold;
           width: 80%;
           font-size: 18px;
@@ -61,8 +57,8 @@
           border-radius: 0 20px 0 0;
         }
         .tbl_2_2{
-          background-color: #64f36e;
-          /* border: 1px solid #626262; */
+          
+           background-color: #d8cdcd;
           text-align: center;
           width: 80%;
           padding: 10px;
@@ -70,17 +66,18 @@
          
         }
         .tbl_2_1{
-         
-          /* border: 1px solid #a4a2a2; */
+        
+          background-color:#e5d7d7;
+          
           text-align: center;
           width: 20%;
-          font-size: 18px;
+          font-size: 15px;
           font-weight: bold;
           padding: 10px;
         }
         .tbl_2_2_d{
-          background-color: #64f36e;
-          /* border: 1px solid #626262; */
+          background-color: #d8cdcd;
+        
           text-align: center;
           width: 80%;
           padding: 10px;
@@ -88,13 +85,26 @@
          
         }
         .tbl_2_1_d{
-          background-color: #b1f493;
-     
-          /* border: 1px solid #626262; */
+         
+          background-color:#e5d7d7;
           text-align: center;
           width: 20%;
-          font-size: 18px;
+          font-size: 15px;
           font-weight: bold;
           padding: 10px;
           border-radius: 0px 0px 0 20px;
+        }
+        .hover{
+          width: 90px;
+          height: 90px;
+          border: #333 solid 2px;
+          background-color: #ccc;
+          align-self: center;
+          padding: 30px;
+            margin-left: auto;
+          margin-right: auto;
+          margin-top: 4px;
+        }
+        .hover:hover {
+          background-color: #be0ed5;
         }

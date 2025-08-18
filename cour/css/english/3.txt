@@ -1,246 +1,229 @@
 <h1 class="cour">CSS</h1>
-
 <h1>Course 2: CSS Selectors</h1>
-<p>Hi , so in this time we learn all the selector type of <b>CSS</b>. We will cover the following topics:</p>
+<p>Hi, in this lesson we will learn all the types of <b>CSS selectors</b>. We will cover the following topics:</p>
 <ul>
-<li>tag selectors</li>
+<li>Tag selectors</li>
 <li>Class selectors</li>
 <li>ID selectors</li>
-<li>attribue selectors</li>
-<li>pseudo-class selectors</li>
-<li>pseudo-element selectors</li>
+<li>Attribute selectors</li>
+<li>Pseudo-class selectors</li>
+<li>Pseudo-element selectors</li>
 </ul>
 
-<h2>tag selectore</h2>
-<p>Like what we say in the previous lesson that we need it to traget all the element have the same type . like we need to style all the botton in the page <br>
+<h2>Tag selector</h2>
+<p>Tag selectors target all elements of the same type. For example, to style all buttons on a page:<br>
 <b>Example:</b></p>
 <div class="exp">
     <code>&lt;style&gt;<br>
-    botton { color: blue; }<br>
+    button { color: blue; }<br> <br>
     &lt;/style&gt;</code>
 </div>
 
-<h2>class Selectors</h2>
-<p>ithe same thing we clarify it in the previous lesson . so we use it when we need a style a specifiqc groups <br><b>Example:for a class named "bloc":</b></p>
+<h2>Class Selectors</h2>
+<p>Class selectors style specific groups of elements. <br><b>Example: for a class named "bloc":</b></p>
 <div class="exp">
     <code>&lt;style&gt;<br>
-    .bloc { display : bloc;
-    <div class="cmt">/* this is for not take just content with but to take all line */</div>
-     }<br>
+    .bloc { display: block;
+    <div class="cmt">/* styles the entire block, not just inline content */</div>
+     }<br> <br>
     &lt;/style&gt;</code>
 </div>
+
 <h2>ID selectors</h2>
-<p>it's also in the previous lesson . so ID selectors target a specific element.  
-
-Example: a paragraph with id="bold":</p>
+<p>ID selectors target a specific element. <br>Example: a paragraph with id="bold":</p>
 <div class="exp">
     <code>&lt;style&gt;<br>
-    #bold { fontweight: bold;
-    <div class="cmt">/* this is for the weight of text can use term like "bold" or "normal" or use number between 0-700*/</div>
-     }<br>
+    #bold { font-weight: bold;
+    <div class="cmt">/* sets text weight: "bold", "normal", or a number 100-900 */</div>
+     }<br> <br>
     &lt;/style&gt;</code>
 </div>
 
-<h2>attribue selectors</h2>
-<p>this a new so what is it to be simple we use it to traget to a specifice tag or tags have a special attribue </p>
+<h2>Attribute selectors</h2>
+<p>Attribute selectors target elements with a specific attribute or attribute value.</p>
 <div class="exp">
     <code>&lt;style&gt;<br>
     [href] { 
-    text-decoration : none ;
-    <div class="cmt">/*this attribue for decorate the text but she just do a line or not have the next values : */</div>
-    <div class="cmt">/* ("underline" : line buttom the text | "overline* : line top of text | "line-throught" : is a line in the middel it's show like strikethrough | "none" : no line )</div>
-    <div class="cmt">/*we can mix also underline and over line in "underline overline"*/</div>
-
-     }<br>
-    &lt;/style&gt;</code>
-</div>
-
-<p> but we can also use it with atribue val like [attribue=val] in this case we can use some spécifique characthers for more controle of the value search like ("~","*","|","^","$","=") <br>
-<div class="exp">
-    <code>&lt;style&gt;<br>
+    text-decoration: none;
+    <div class="cmt">/* controls text decoration: underline, overline, line-through, none */</div>
+     }<br> <br>
     [type="submit"] { 
-    border-width : 2px; <div class="cmt">/*add a border to the tag styles 0 val is the default no border*/</div>
-    border-color : cyan; <div class="cmt">/*color the to cyan border of the tag styles*/</div>
-    border-style : solid ;<div class="cmt">/*type of border "solid" ,"dashed","dotted","double" */</div>
-    <div class="cmt">/* we can use just border property but we give her the next value in the same line "width,style,color"/</div>
-    border-raduis: 10px; <div class="cmt">/*raduis the angle of border */</div>
-    
-     }<br>
+    border-width: 2px; <div class="cmt">/* border width */</div>
+    border-color: cyan; <div class="cmt">/* border color */</div>
+    border-style: solid; <div class="cmt">/* border style: solid, dashed, dotted, double */</div>
+    border-radius: 10px; <div class="cmt">/* rounds corners */</div>
+     }<br> <br>
     &lt;/style&gt;</code>
 </div>
 
-we will explain it more in the next table</p>
-
 <div class="tbl_area">
  <table class="tbl_2">
- <tr><td class="tbl_2_h"> attribue selector</td><td class="tbl_2_2_h">explication</td></tr>
-<tr><td class="tbl_2_1">[href="btn"]</td><td class="tbl_2_2">traget to all tags have href="btn"</td><tr>
-<tr><td class="tbl_2_1">[href ^="btn"]</td><td class="tbl_2_2">traget to all tage have val of attribue href start with "btn" like  href="btn-pramary" </td><tr>
-<tr><td class="tbl_2_1">[href $="btn"]</td><td class="tbl_2_2">traget to all tage have val of attribue href end with "btn" like  href="secandry-pramary-btn" </td><tr>
-<tr><td class="tbl_2_1">[href ~="btn"]</td><td class="tbl_2_2">traget to all tage have the word "btn"  in in attribue href like  href="secandry-pramary btn" not  href="secandry-pramary-btn" should be separate by espace</td><tr>
-<tr><td class="tbl_2_1">[href *="btn"]</td><td class="tbl_2_2"> traget to all tage have the word "btn"  in in attribue href like  href="secandry-pramary btn" or  href="secandry-pramary-btn" or  href="secandry-pramarybtn" just should be doesn't matter if separate by espace or not </td><tr>
-<tr><td class="tbl_2_1_d">[href |="btn"]</td><td class="tbl_2_2_d">traget to all tags have href="btn" or strart with "btn-" like href="btn-danger"</td><tr>
+ <tr><td class="tbl_2_h">Attribute selector</td><td class="tbl_2_2_h">Explanation</td></tr>
+<tr><td class="tbl_2_1">[href="btn"]</td><td class="tbl_2_2">Targets elements with href="btn"</td></tr>
+<tr><td class="tbl_2_1">[href^="btn"]</td><td class="tbl_2_2">Targets elements whose href starts with "btn", e.g., href="btn-primary"</td></tr>
+<tr><td class="tbl_2_1">[href$="btn"]</td><td class="tbl_2_2">Targets elements whose href ends with "btn", e.g., href="secondary-primary-btn"</td></tr>
+<tr><td class="tbl_2_1">[href~="btn"]</td><td class="tbl_2_2">Targets elements whose href contains the word "btn" separated by space, e.g., href="secondary primary btn"</td></tr>
+<tr><td class="tbl_2_1">[href*="btn"]</td><td class="tbl_2_2">Targets elements whose href contains "btn" anywhere, e.g., href="secondary-primary-btn"</td></tr>
+<tr><td class="tbl_2_1_d">[href|="btn"]</td><td class="tbl_2_2_d">Targets elements with href="btn" or starting with "btn-", e.g., href="btn-danger"</td></tr>
 </table>
 </div>
-<h2>pseudo-class attribue </h2>
-<p> the pseudo-class attribue was spécial is not a traget normal because first should add a selector between (tag class attribue selector) and she traget the action happend (hover-focus ...)to a tag or structur (first-child,empty,ntoftype) or chec the input state (cheked,disable,required) or content&language (lang,dir) and finnaly can use to ui state (is ,where ...);
-<p>
+
+<h2>Pseudo-class selectors</h2>
+<p>Pseudo-classes style elements based on user actions, structure, form/input state, or UI state.</p>
 <div class="exp">
     <code>&lt;style&gt;<br>
-    div :hover { 
-     <div class="cmt">/*this style work when the mouse has on the div tag */</div>
-    background-color:cyan;
-     }<br>
-    input [type="text"] :focus { 
-     <div class="cmt">/*this style work when we write in the input type text */</div>
-    border-color:cyan;
-     }<br>
-     p :first-child { 
-     <div class="cmt">/*this style work on the first child of p */</div>
-    background-color:cyan;
-     }<br>
-     :is(p) { 
-     <div class="cmt">/*this style work if tag was a p */</div>
-    background-color:cyan;
-     }<br>
-     
+    div:hover { 
+     <div class="cmt">/* style when mouse is over the div */</div>
+    background-color: cyan;
+     }<br> <br>
+    input[type="text"]:focus { 
+     <div class="cmt">/* style when typing in input type text */</div>
+    border-color: cyan;
+     }<br> <br>
+    p:first-child { 
+     <div class="cmt">/* style the first child p */</div>
+    background-color: cyan;
+     }<br> <br>
+    p:is(.highlight, .special) { 
+     <div class="cmt">/*Applies styles to all &lt;p&gt; elements that match either .highlight */</div>
+    background-color: cyan;
+     }<br> <br>
     &lt;/style&gt;</code>
+</div>
+
+<!-- Pseudo-class (Action) -->
+<div class="tbl_area">
+ <table class="tbl_2">
+ <tr><td class="tbl_2_h">Pseudo-class (Action)</td><td class="tbl_2_2_h">Explanation</td></tr>
+<tr><td class="tbl_2_1">:hover</td><td class="tbl_2_2">Targets the element when the mouse is over it</td></tr>
+<tr><td class="tbl_2_1">:active</td><td class="tbl_2_2">Targets the element when it is being clicked</td></tr>
+<tr><td class="tbl_2_1">:focus</td><td class="tbl_2_2">Applies when the element is focused (e.g., input text)</td></tr>
+<tr><td class="tbl_2_1">:focus-within</td><td class="tbl_2_2">Applies if the element or its children are focused</td></tr>
+<tr><td class="tbl_2_1_d">:focus-visible</td><td class="tbl_2_2_d">Appears only when using keyboard or assistive technologies</td></tr>
+</table>
+</div>
+<div class="exp">
+ A real example of the :hover pseudo-class. The square below is a div that changes background color when hovered.
+ <div class="hover"></div>
+</div>
+<!-- Pseudo-class (Structure) -->
+<div class="tbl_area">
+ <table class="tbl_2">
+ <tr><td class="tbl_2_h">Pseudo-class (Structure)</td><td class="tbl_2_2_h">Explanation</td></tr>
+<tr><td class="tbl_2_1">:first-child</td><td class="tbl_2_2">Styles the first child of a parent</td></tr>
+<tr><td class="tbl_2_1">:last-child</td><td class="tbl_2_2">Styles the last child of a parent</td></tr>
+<tr><td class="tbl_2_1">:nth-child(n)</td><td class="tbl_2_2">Matches the nth child of a parent</td></tr>
+<tr><td class="tbl_2_1">:nth-last-child(n)</td><td class="tbl_2_2">Matches the nth child counting from the end</td></tr>
+<tr><td class="tbl_2_1">:nth-of-type(n)</td><td class="tbl_2_2">Matches the nth element of its type</td></tr>
+<tr><td class="tbl_2_1">:nth-last-of-type(n)</td><td class="tbl_2_2">Matches the nth element of its type counting from the end</td></tr>
+<tr><td class="tbl_2_1">:only-child</td><td class="tbl_2_2">Applies if the element is the only child of its parent</td></tr>
+<tr><td class="tbl_2_1">:only-of-type</td><td class="tbl_2_2">Applies if the element is the only one of its type in the parent</td></tr>
+<tr><td class="tbl_2_1_d">:empty</td><td class="tbl_2_2_d">Applies if the element has no children</td></tr>
+</table>
+</div>
 
 
-</div>
-<p> we will explain of the user action more in the next table</p>
+<!-- Pseudo-class (Form & Input State) -->
 <div class="tbl_area">
  <table class="tbl_2">
- <tr><td class="tbl_2_h"> pseudo-class (Action)</td><td class="tbl_2_2_h">explication</td></tr>
-<tr><td class="tbl_2_1"> :hover</td><td class="tbl_2_2"> traget the tag when the mouse was on it</td><tr>
-<tr><td class="tbl_2_1"> :active</td><td class="tbl_2_2"> traget the tag when we click on it </td><tr>
-<tr><td class="tbl_2_1"> :focus</td><td class="tbl_2_2">work when the tag was focus like in the input text </td><tr>
-<tr><td class="tbl_2_1"> :focus-within</td><td class="tbl_2_2"> work if it focus or their children</td><tr>
-<tr><td class="tbl_2_1_d"> :focus-visible</td><td class="tbl_2_2_d"> It only appears when using the keyboard or assistive technologies (good for blind people)</td><tr>
+ <tr><td class="tbl_2_h">Pseudo-class (Form & Input State)</td><td class="tbl_2_2_h">Explanation</td></tr>
+<tr><td class="tbl_2_1">:checked</td><td class="tbl_2_2">Applies if a radio or checkbox is checked</td></tr>
+<tr><td class="tbl_2_1">:disabled</td><td class="tbl_2_2">Applies if the input is disabled</td></tr>
+<tr><td class="tbl_2_1">:enabled</td><td class="tbl_2_2">Applies if the input is enabled (default state)</td></tr>
+<tr><td class="tbl_2_1">:required</td><td class="tbl_2_2">Applies if the input is required</td></tr>
+<tr><td class="tbl_2_1">:optional</td><td class="tbl_2_2">Applies to optional inputs</td></tr>
+<tr><td class="tbl_2_1">:valid</td><td class="tbl_2_2">Applies if the input value is valid</td></tr>
+<tr><td class="tbl_2_1">:invalid</td><td class="tbl_2_2">Applies if the input value is invalid</td></tr>
+<tr><td class="tbl_2_1">:in-range</td><td class="tbl_2_2">Targets inputs whose value is within the allowed range</td></tr>
+<tr><td class="tbl_2_1">:out-of-range</td><td class="tbl_2_2">Targets inputs whose value is outside the allowed range</td></tr>
+<tr><td class="tbl_2_1">:read-only</td><td class="tbl_2_2">Targets inputs that cannot be edited</td></tr>
+<tr><td class="tbl_2_1_d">:read-write</td><td class="tbl_2_2_d">Targets inputs that can be edited</td></tr>
 </table>
 </div>
-<p> we will explain of the user action more in the next table</p>
+
+<!-- Pseudo-class (UI State) -->
 <div class="tbl_area">
  <table class="tbl_2">
- <tr><td class="tbl_2_h"> pseudo-class (struct)</td><td class="tbl_2_2_h">explication</td></tr>
-<tr><td class="tbl_2_1"> :first-child</td><td class="tbl_2_2">the style work in the first child of the parent</td><tr>
-<tr><td class="tbl_2_1"> :last-child</td><td class="tbl_2_2">work in the last child of parent </td><tr>
-<tr><td class="tbl_2_1"> :nth-child(n)</td><td class="tbl_2_2"> matched the n child</td><tr>
-<tr><td class="tbl_2_1"> :nth-last-child(n)</td><td class="tbl_2_2"> the same for nth-child(n) but she start with last to the first</td><tr>
-<tr><td class="tbl_2_1"> :nth-type(n)</td><td class="tbl_2_2"> matched the n type</td><tr>
-<tr><td class="tbl_2_1"> nth-last-type(n)</td><td class="tbl_2_2"> the same for nth-type(n) but she start with last to the first</td><tr>
-<tr><td class="tbl_2_1"> :only-child</td><td class="tbl_2_2"> work if only it's child</td><tr>
-<tr><td class="tbl_2_1"> :only-of-type</td><td class="tbl_2_2"> work if element of its type in the parent</td><tr>
-<tr><td class="tbl_2_1_d"> :empty</td><td class="tbl_2_2_d"> work if the elemnt have no children</td><tr>
+ <tr><td class="tbl_2_h">Pseudo-class (UI State)</td><td class="tbl_2_2_h">Explanation</td></tr>
+<tr><td class="tbl_2_1">:is()</td><td class="tbl_2_2">Targets elements matching the selector(s) inside parentheses</td></tr>
+<tr><td class="tbl_2_1">:where()</td><td class="tbl_2_2">Same as :is() but without affecting specificity</td></tr>
+<tr><td class="tbl_2_1">:has()</td><td class="tbl_2_2">Targets elements that contain elements matching the selector inside parentheses</td></tr>
+<tr><td class="tbl_2_1_d">:not()</td><td class="tbl_2_2_d">Targets elements that do NOT match the selector inside parentheses</td></tr>
 </table>
 </div>
-<p>next we will explain of form & input state in the next table</p>
-<div class="tbl_area">
- <table class="tbl_2">
- <tr><td class="tbl_2_h"> pseudo-class (Form & input state)</td><td class="tbl_2_2_h">explication</td></tr>
-<tr><td class="tbl_2_1"> :cheked</td><td class="tbl_2_2">work if was cheked (radio,chekbox) </td><tr>
-<tr><td class="tbl_2_1"> :disabled</td><td class="tbl_2_2">work if the input disabled </td><tr>
-<tr><td class="tbl_2_1"> :enabled</td><td class="tbl_2_2"> work if the input enabled (the default value of input or button )</td><tr>
-<tr><td class="tbl_2_1"> :required</td><td class="tbl_2_2"> work if the input required (required use for the needed information )</td><tr>
-<tr><td class="tbl_2_1"> :optional</td><td class="tbl_2_2"> worked in the optional input</td><tr>
-<tr><td class="tbl_2_1"> :valid</td><td class="tbl_2_2"> workd in the input have a valid value (valid value decided by pattern or js functions normally)</td><tr>
-<tr><td class="tbl_2_1"> :invalid</td><td class="tbl_2_2"> worked in the input have a invalid input</td><tr>
-<tr><td class="tbl_2_1"> :in-range</td><td class="tbl_2_2"> -  targets inputs whose current value is within the allowed range.</td><tr>
-<tr><td class="tbl_2_1"> :out-of-range</td><td class="tbl_2_2"> - targets inputs whose value is outside the allowed range.</td><tr>
-<tr><td class="tbl_2_1"> :read-only</td><td class="tbl_2_2"> - targets inputs whose can't write in them just read (have a default value in the general)</td><tr>
-<tr><td class="tbl_2_1_d"> :read-write</td><td class="tbl_2_2_d">  targets inputs whose can write and read it</td><tr>
-</table>
-</div>
-<p>next we will explain of <b>UI state<b> in the next table</p>
-<div class="tbl_area">
- <table class="tbl_2">
- <tr><td class="tbl_2_h"> pseudo-class (UI state)</td><td class="tbl_2_2_h">explication</td></tr>
-<tr><td class="tbl_2_1"> :is()</td><td class="tbl_2_2"> tragets tag have in bakets ()</td><tr>
-<tr><td class="tbl_2_1"> :where()</td><td class="tbl_2_2"> the same of is() but without specificity</td><tr>
-<tr><td class="tbl_2_1"> :has</td><td class="tbl_2_2"> tragets who have the element in brakets in them</td><tr>
-<tr><td class="tbl_2_1_d"> :not()</td><td class="tbl_2_2_d">tragets tags diffrents the one have in the brakets ()  </td><tr>
-</table>
-</div>
-<h2> pseudo-element selector </h2>
-<p> the pseudo-element give u the permession to style a special part in the element in the syntax we add "::" before it not ":" like pseudo-class </p>
+
+<h2>Pseudo-element selectors</h2>
+<p>Pseudo-elements allow styling a specific part of an element using "::" before it.</p>
 <div class="exp">
     <code>&lt;style&gt;<br>
-    h1 ::before { 
+    h1::before { 
      content: "hello";
-     <div class="cmt">/*this style "hello" to the h1 content */</div>
-     }<br>
-    input ::file-selector-button { 
-    border-color:cyan;
-     }<br>
-     b ::first-letter { 
-     <div class="cmt">/*this style work on the first child of p */</div>
-    background-color:cyan;
-     }<br>
-     
+     <div class="cmt">/* adds "hello" before the h1 content */</div>
+     }<br> <br>
+    input::file-selector-button { 
+    border-color: cyan;
+     }<br> <br>
+    b::first-letter { 
+     <div class="cmt">/* styles the first letter of element */</div>
+    background-color: cyan;
+     }<br> <br>
     &lt;/style&gt;</code>
-<div>
-
-
 </div>
-<p>will explain them all in the next table</p>
+
 <div class="tbl_area">
  <table class="tbl_2">
- <tr><td class="tbl_2_h"> pseudo-element </td><td class="tbl_2_2_h">explication</td></tr>
-<tr><td class="tbl_2_1"> ::before</td><td class="tbl_2_2"> add content to the selctor before the content of element</td><tr>
-<tr><td class="tbl_2_1"> ::after</td><td class="tbl_2_2"> add content to the selctor after the content of element</td><tr>
-<tr><td class="tbl_2_1"> ::first-line</td><td class="tbl_2_2"> styles the first line of element</td><tr>
-<tr><td class="tbl_2_1"> ::first-letter</td><td class="tbl_2_2"> styles the first letter of element</td><tr>
-<tr><td class="tbl_2_1"> ::placeholder</td><td class="tbl_2_2">  styles the placeholder of inputs</td><tr>
-<tr><td class="tbl_2_1"> ::selection</td><td class="tbl_2_2">  styles the text selected by user</td><tr>
-<tr><td class="tbl_2_1"> ::marker</td><td class="tbl_2_2">  styles the bullet or numbering symbol of list</td><tr>
-<tr><td class="tbl_2_1_d"> ::file-selector-button</td><td class="tbl_2_2_d"> styles the button of "input type="file"</td><tr>
+ <tr><td class="tbl_2_h">Pseudo-element</td><td class="tbl_2_2_h">Explanation</td></tr>
+<tr><td class="tbl_2_1">::before</td><td class="tbl_2_2">Adds content before the element content</td></tr>
+<tr><td class="tbl_2_1">::after</td><td class="tbl_2_2">Adds content after the element content</td></tr>
+<tr><td class="tbl_2_1">::first-line</td><td class="tbl_2_2">Styles the first line of the element</td></tr>
+<tr><td class="tbl_2_1">::first-letter</td><td class="tbl_2_2">Styles the first letter of the element</td></tr>
+<tr><td class="tbl_2_1">::placeholder</td><td class="tbl_2_2">Styles the placeholder of input elements</td></tr>
+<tr><td class="tbl_2_1">::selection</td><td class="tbl_2_2">Styles the text selected by the user</td></tr>
+<tr><td class="tbl_2_1">::marker</td><td class="tbl_2_2">Styles the bullet or numbering of lists</td></tr>
+<tr><td class="tbl_2_1_d">::file-selector-button</td><td class="tbl_2_2_d">Styles the button of input type="file"</td></tr>
 </table>
 </div>
 
 <h2>🎁 Bonus Tip:</h2>
-
 <ul>
-<li> the pseudo-class or elemnt should have a selector of ("tag","id","class","attribue") before it to work correctly</li>
-<li> we can match a lot of selector by the next way one of ("tag","id","class") and atribue selector or ("tag","id","class") and pseudo-class or element or ("tag","id","class") and atribue and  pseudo-class or element  <b> (we do that for more precize )</li>
+<li>Pseudo-classes or pseudo-elements must have a selector (tag, id, class, attribute) before them to work correctly.</li>
+<li>You can combine selectors for precision. For example:</li>
 <code>&lt;style&gt;<br>
-    input [type="text"] :hover { 
-     <div class="cmt">/*this style the input have type text when she is hover */</div>
-    background-color:cyan;
-     }<br>
- &lt;/style&gt;</code>
-<div>
-<li>we have some symbol do it in between tow selctor like (" ","+",">","~")</li>
+    input[type="text"]:hover { 
+     <div class="cmt">/* styles text inputs when hovered */</div>
+    background-color: cyan;
+     }<br> <br>
+&lt;/style&gt;</code>
+<li>Some symbols can be used between selectors: (" ", "+", ">", "~")</li>
 </ul>
-<p> we will explain in table : </p>
+
 <div class="tbl_area">
  <table class="tbl_2">
- <tr><td class="tbl_2_h"> symbol</td><td class="tbl_2_2_h">explication</td></tr>
-<tr><td class="tbl_2_1"> space </td><td class="tbl_2_2"> Any nested child (no mater if child of child)</td><tr>
-<tr><td class="tbl_2_1"> > </td><td class="tbl_2_2"> Only direct children</td><tr>
-<tr><td class="tbl_2_1"> ~ </td><td class="tbl_2_2"> Next sibling only</td><tr>
-<tr><td class="tbl_2_1_d"> + </td><td class="tbl_2_2_d"> All following siblings</td><tr>
+ <tr><td class="tbl_2_h">Symbol</td><td class="tbl_2_2_h">Explanation</td></tr>
+<tr><td class="tbl_2_1">space</td><td class="tbl_2_2">Any nested child (child of child also included)</td></tr>
+<tr><td class="tbl_2_1">></td><td class="tbl_2_2">Only direct children</td></tr>
+<tr><td class="tbl_2_1">~</td><td class="tbl_2_2">All following siblings</td></tr>
+<tr><td class="tbl_2_1_d">+</td><td class="tbl_2_2_d">Next sibling only</td></tr>
 </table>
-</div> 
+</div>
+
 <div class="exp">
     <code>&lt;style&gt;<br>
     div p { 
-     <div class="cmt">/*this style work in any p insead div */</div>
-    background-color:cyan;
-     }<br>
+     <div class="cmt">/* any p inside a div */</div>
+    background-color: cyan;
+     }<br> <br>
     form > input { 
-     <div class="cmt">/*this style work in any input child of form */</div>
-    border-color:cyan;
-     }<br>
-     h2 + p { 
-     <div class="cmt">/*this style work on the first next siblling of h2 was p */</div>
-    background-color:cyan;
-     }<br>
-      div ~ p{ 
-     <div class="cmt">/*this style work in all the the following siblling of div was a p*/</div>
-    background-color:cyan;
-     }<br>
-     
+     <div class="cmt">/* direct input children of a form */</div>
+    border-color: cyan;
+     }<br> <br>
+    h2 + p { 
+     <div class="cmt">/* first next sibling p of h2 */</div>
+    background-color: cyan;
+     }<br> <br>
+    div ~ p{ 
+     <div class="cmt">/* all following p siblings of div */</div>
+    background-color: cyan;
+     }<br> <br>
     &lt;/style&gt;</code>
-
-
 </div>

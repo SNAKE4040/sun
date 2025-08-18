@@ -17,7 +17,7 @@ To make it simple, write the property, followed by a colon ":", then the value.<
 <b>Example:</b></p>
 <div class="exp">
     <code>&lt;style&gt;<br>
-    p { color: blue; }<br>
+    p { color: blue; }<br><br>
     &lt;/style&gt;</code>
 </div>
 
@@ -29,7 +29,7 @@ Selectors are used to target specific parts of a page. Let’s explain each type
 <p>Tag selectors target all elements of a specific type. For example, to style all paragraphs, use the tag name "p".</p>
 <div class="exp">
     <code>&lt;style&gt;<br>
-    p { color: blue; }<br>
+    p { color: blue; }<br><br>
     &lt;/style&gt;</code>
 </div>
 
@@ -40,7 +40,7 @@ To use a class, add a dot "." before the class name.
 Example: for a class named "container":</p>
 <div class="exp">
     <code>&lt;style&gt;<br>
-    .container { width: 200px; }<br>
+    .container { width: 200px; }<br><br>
     &lt;/style&gt;</code>
 </div>
 
@@ -50,7 +50,7 @@ Use the "#" character before the ID name.
 Example: a paragraph with id="blue":</p>
 <div class="exp">
     <code>&lt;style&gt;<br>
-    #bleu { background-color: blue; }<br>
+    #bleu { background-color: blue; }<br><br>
     &lt;/style&gt;</code>
 </div>
 
@@ -94,7 +94,7 @@ They are ignored by the browser and used to explain or temporarily disable code.
     <code>&lt;style&gt;<br>
     #bleu { background-color: blue; 
     <div class="cmt">/ this is a comment /</div>
-    }<br>
+    }<br><br>
     &lt;/style&gt;</code>
 </div>
 
@@ -102,7 +102,7 @@ They are ignored by the browser and used to explain or temporarily disable code.
     <code>&lt;style&gt;<br>
     #bleu { background-color: blue; 
     <div class="cmt">/ background color of #bleu /</div>
-    }<br>
+    }<br><br>
     &lt;/style&gt;</code>
 </div>
 
@@ -110,7 +110,7 @@ They are ignored by the browser and used to explain or temporarily disable code.
     <code>&lt;style&gt;<br>
     #bleu { background-color: blue; 
     <div class="cmt">/ height: 50%; ignored because default height applies /</div>
-    }<br>
+    }<br><br>
     &lt;/style&gt;</code>
 </div>
 
