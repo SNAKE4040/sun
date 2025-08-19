@@ -5,7 +5,6 @@
     </head>
 <body>
 <h1 class="cour">CSS</h1>
-<h1 class="cour">CSS</h1>
 
 <h1>Course 3: CSS Properties</h1>
 <p>Hi, we meet again! This is the third lesson after the introduction. You have already learned about ("CSS Cascade", "CSS Syntax", and "CSS Selectors"), and now you know many CSS properties that we used in the examples.</p>
