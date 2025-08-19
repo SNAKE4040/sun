@@ -1,18 +1,19 @@
-    <h1 class="cour">CSS</h1>
-
+   
     <h1>Introduction:</h1>
-    <p>CSS stands for <b>Cascading Style Sheets</b>. It is a stylesheet language used to describe the presentation and layout of HTML documents. CSS allows developers to control the look and feel of web pages across different devices and screen sizes.</p>
+    <p>CSS is a powerful tool that allows you to style your HTML documents. It helps you create visually appealing web pages by controlling layout, colors, fonts, and more. Before learning CSS, it is important to have a basic understanding of HTML.</p>
+    <p>CSS stands for <b>Cascading Style Sheets</b>. It is a stylesheet language used to describe the presentation and layout of HTML documents. CSS enables developers to control the appearance and design of web pages across different devices and screen sizes. It was first proposed by Håkon Wium Lie in 1994 and has since evolved through multiple levels (CSS1, CSS2, CSS3) to include a wide range of styling features and responsive design capabilities.</p>
 
     <h2>How to Use CSS</h2>
+
     <h3>1. External CSS</h3>
     <p>You can write CSS in a separate file (e.g., <b>style.css</b>) and link it to your HTML using the <b>&lt;link&gt;</b> tag inside the &lt;head&gt; section.</p>
     <div class="exp">
         <code>&lt;link href="style.css" rel="stylesheet"&gt;</code>
     </div>
-    <p><i>The <b>href</b> attribute refers to the CSS file path.</i></p>
+    <p><i>The <b>href</b> attribute specifies the path to the CSS file.</i></p>
 
     <h3>2. Internal CSS</h3>
-    <p>You can write CSS code directly inside your HTML file within a &lt;style&gt; tag, usually placed inside the &lt;head&gt; section.</p>
+    <p>You can write CSS code directly inside your HTML file within a &lt;style&gt; tag, usually placed in the &lt;head&gt; section.</p>
     <div class="exp">
         <code>&lt;style&gt;<br>
         p { color: blue; }<br><br>
@@ -29,9 +30,10 @@
     <p><b>When to use each method:</b></p>
     <ul>
         <li><b>External CSS</b>: Best for large websites with multiple pages sharing the same styles.</li>
-        <li><b>Internal CSS</b>: Useful for single-page documents or when you need custom styles for just one HTML file.</li>
+        <li><b>Internal CSS</b>: Useful for single-page documents or when custom styles are needed for one HTML file.</li>
         <li><b>Inline CSS</b>: Used for quick styling of individual elements. Not recommended for large-scale styling.</li>
     </ul>
 
-    <div style="color:green ; font-size: 1.5em">Text in paragraph</div>
+    <div style="color: green; font-size: 1.5em;">Text in paragraph</div>
+
     <p>CSS follows a priority order called the <b>Cascade</b>: Inline styles override internal styles, and internal styles override external styles (unless <code>!important</code> is used).</p>

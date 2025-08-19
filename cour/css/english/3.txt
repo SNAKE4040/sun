@@ -20,7 +20,7 @@
 </div>
 
 <h2>Class Selectors</h2>
-<p>Class selectors style specific groups of elements. <br><b>Example: for a class named "bloc":</b></p>
+<p>Class selectors style specific groups of elements. <br><b>Example: styling elements with the class 'bloc':</b></p>
 <div class="exp">
     <code>&lt;style&gt;<br>
     .bloc { display: block;
@@ -30,7 +30,7 @@
 </div>
 
 <h2>ID selectors</h2>
-<p>ID selectors target a specific element. <br>Example: a paragraph with id="bold":</p>
+<p>ID selectors target a specific element. <br>Example: styling a paragraph with the id "bold":</p>
 <div class="exp">
     <code>&lt;style&gt;<br>
     #bold { font-weight: bold;
@@ -62,7 +62,7 @@
 <tr><td class="tbl_2_1">[href="btn"]</td><td class="tbl_2_2">Targets elements with href="btn"</td></tr>
 <tr><td class="tbl_2_1">[href^="btn"]</td><td class="tbl_2_2">Targets elements whose href starts with "btn", e.g., href="btn-primary"</td></tr>
 <tr><td class="tbl_2_1">[href$="btn"]</td><td class="tbl_2_2">Targets elements whose href ends with "btn", e.g., href="secondary-primary-btn"</td></tr>
-<tr><td class="tbl_2_1">[href~="btn"]</td><td class="tbl_2_2">Targets elements whose href contains the word "btn" separated by space, e.g., href="secondary primary btn"</td></tr>
+<tr><td class="tbl_2_1">[href~="btn"]</td><td class="tbl_2_2">Selects elements whose href contains the word "btn" as a separate value, e.g., href="secondary primary btn"</td></tr>
 <tr><td class="tbl_2_1">[href*="btn"]</td><td class="tbl_2_2">Targets elements whose href contains "btn" anywhere, e.g., href="secondary-primary-btn"</td></tr>
 <tr><td class="tbl_2_1_d">[href|="btn"]</td><td class="tbl_2_2_d">Targets elements with href="btn" or starting with "btn-", e.g., href="btn-danger"</td></tr>
 </table>
@@ -77,15 +77,15 @@
     background-color: cyan;
      }<br> <br>
     input[type="text"]:focus { 
-     <div class="cmt">/* style when typing in input type text */</div>
+     <div class="cmt">/* Style applied while typing inside a text input field */</div>
     border-color: cyan;
      }<br> <br>
     p:first-child { 
-     <div class="cmt">/* style the first child p */</div>
+     <div class="cmt">/* Style the first paragraph that is a child of its parent */</div>
     background-color: cyan;
      }<br> <br>
     p:is(.highlight, .special) { 
-     <div class="cmt">/*Applies styles to all &lt;p&gt; elements that match either .highlight */</div>
+     <div class="cmt">/*Applies styles to all &lt;p&gt;  elements that have the class .highlight or .special */</div>
     background-color: cyan;
      }<br> <br>
     &lt;/style&gt;</code>
@@ -164,7 +164,7 @@
     border-color: cyan;
      }<br> <br>
     b::first-letter { 
-     <div class="cmt">/* styles the first letter of element */</div>
+     <div class="cmt">/* Styles the first letter of the element */</div>
     background-color: cyan;
      }<br> <br>
     &lt;/style&gt;</code>
@@ -194,13 +194,13 @@
     background-color: cyan;
      }<br> <br>
 &lt;/style&gt;</code>
-<li>Some symbols can be used between selectors: (" ", "+", ">", "~")</li>
+<li>Certain symbols can be used between selectors: (" ", "+", ">", "~")</li>
 </ul>
 
 <div class="tbl_area">
  <table class="tbl_2">
  <tr><td class="tbl_2_h">Symbol</td><td class="tbl_2_2_h">Explanation</td></tr>
-<tr><td class="tbl_2_1">space</td><td class="tbl_2_2">Any nested child (child of child also included)</td></tr>
+<tr><td class="tbl_2_1">space</td><td class="tbl_2_2">Selects any descendant element (nested at any level)</td></tr>
 <tr><td class="tbl_2_1">></td><td class="tbl_2_2">Only direct children</td></tr>
 <tr><td class="tbl_2_1">~</td><td class="tbl_2_2">All following siblings</td></tr>
 <tr><td class="tbl_2_1_d">+</td><td class="tbl_2_2_d">Next sibling only</td></tr>
