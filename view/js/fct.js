@@ -47,6 +47,9 @@ function getcour(ad){
          btn.setAttribute('disabled', 'true');
          btn.textContent = line + " (Locked)";
          const lockarea = document.createElement('div');
+         btn.onclick=function(){
+          alert("This course is locked. Please contact the administrator for access.");
+         }
          lockarea.onclick = function() {
           alert("This course is locked. Please contact the administrator for access.");
          };
