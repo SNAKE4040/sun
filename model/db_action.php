@@ -34,10 +34,11 @@ class action {
         
         return $stmt->execute();
     }
-    public function checuser($email) {
-        $sql = "SELECT * FROM client WHERE email=:email";
+    public function checuser($email, $password) {
+        $sql = "SELECT * FROM client WHERE email=:email AND password=:password";
         $stmt = $this->bd->prepare($sql);
         $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':password', $password);
         $stmt->execute();
         
         return $stmt->fetch(PDO::FETCH_ASSOC);
@@ -62,5 +63,28 @@ class action {
         
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+   public function cheque_admin($email,$finger){
+       $sql = "SELECT * FROM admin WHERE email=:email AND finger=:finger";
+       $stmt = $this->bd->prepare($sql);
+       $stmt->bindParam(':email', $email);
+       $stmt->bindParam(':finger', $finger);
+       $stmt->execute();
 
+       return $stmt->fetch(PDO::FETCH_ASSOC);
+       if($stmt->rowCount() > 0) {
+           return true;
+       } else {
+           $sql = "SELECT * FROM admin WHERE email=:email";
+           $stmt = $this->bd->prepare($sql);
+           $stmt->bindParam(':email', $email);
+           $stmt->execute();
+
+           return $stmt->fetch(PDO::FETCH_ASSOC);
+           if($stmt->rowCount() > 0) {
+               return "admin";
+           } else {
+               return false;
+           }
+       }
+   }
 };

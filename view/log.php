@@ -116,7 +116,7 @@
                     <input type="password" name="password" placeholder="password">
                 </div>
                 <div class="c">
-                    <input type="submit" value="Sign Up" name="log in">
+                    <input type="submit" value="log in" name="log in">
                 </div>
             </div>
             </form>
