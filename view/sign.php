@@ -16,14 +16,13 @@
         background: #030013;
         border-radius: 8px;
         overflow: hidden;
-
     }
     body{
         display: flex;
         align-items: center;
         justify-content: center;
         height: 100vh;
-        background-color: #F0F0FF;/*#ffc9be;*/
+        background-color: #F0F0FF;
     }
     .a::before{
         content: "";
@@ -56,14 +55,12 @@
     .b{
         position : absolute;
         inset: 3px;
-        background:#FfFFFf;/* #fff8be;*/
+        background:#FfFFFf;
         border-radius: 8px;
         z-index: 10;
         padding: 30px 40px;
         display: flex;
         flex-direction: column;
-
-        
     }
     .b h2{
         color: #000;
@@ -77,16 +74,13 @@
 
     }
     .c input{
-        padding: 6px 4px 10px;
-        
-        background: transparent;
-        
+        padding: 6px 4px 10px;        
+        background: transparent;        
         font-size: 18px;
         outline: none;
         color: #000;
     }
     input[type="submit"]{
-        /*border: 1px solid #000;*/
         cursor: pointer;
         background: #93eeda;
         border-radius: 10px;
