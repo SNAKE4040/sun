@@ -19,3 +19,51 @@ btn.addEventListener('click', function (event) {
   });
 });
 }
+function getcour(ad){
+  document.getElementById('courForm').addEventListener('submit', function(e) {
+  e.preventDefault(); // Prevent form reload
+
+  const cour = document.getElementById('cour').value;
+  const formData = new FormData();
+  formData.append('cour', cour);
+
+  fetch('get_cour.php', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => response.json())
+  .then(data => {
+    const container = document.getElementById('buttonsContainer');
+    container.innerHTML = ''; // Clear previous buttons
+
+    data.forEach((line, index) => {
+      const btn = document.createElement('button');
+      btn.type = 'submit';
+      btn.name = 'action';
+      btn.value = index;
+      btn.textContent = line;
+      if(ad<index){
+        btn.setAttribute('disabled', 'true');
+        btn.textContent = line + " (Locked)";
+        const lockarea = document.createElement('div');
+        lockarea.onclick = function() {
+          prompt("This course is locked. Please contact the administrator for access.");
+        };
+        lockarea.className = "lock-area";
+        container.appendChild(lockarea);
+        lockarea.appendChild(btn);
+      }
+      else {
+        const unlockarea = document.createElement('div');
+       unlockarea.className = "unlock-area";
+       container.appendChild(unlockarea);
+       unlockarea.appendChild(btn);
+      }
+      container.appendChild(document.createElement('br'));
+    });
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+});
+}

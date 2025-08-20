@@ -1,5 +1,3 @@
-<h1 class="cour">CSS</h1>
-
 <h1>Course 3: CSS Properties</h1>
 <p>Hi, we meet again! This is the third lesson after the introduction. You have already learned about ("CSS Cascade", "CSS Syntax", and "CSS Selectors"), and now you know many CSS properties that we used in the examples.</p>
 <p>Congratulations! At this point, you’ve passed the beginner stage. I'm really happy and proud of you. But here, I will just give you the information. Yes, you’ve done some quizzes, but you don’t yet have real experience.</p>
@@ -124,7 +122,7 @@
 <div class="exp_2">
   <div class="exp_2_1">
     <code>&lt;style&gt;<br>
-    p { position: absolute; top:30px; background-color: #5a1ea9; }<br>
+    p { position: absolute; top:30px; background-color: #c099f4ff; }<br>
     <div class="cmt">/* Positioned 30px from the top of the parent (or body if no parent is relative) */</div><br><br>
     &lt;/style&gt;</code>
   </div>

@@ -130,7 +130,7 @@
 <div class="exp_2">
   <div class="exp_2_1">
     <code>&lt;style&gt;<br>
-    p { position: absolute; top:30px; background-color: #5a1ea9; }<br>
+    p { position: absolute; top:30px; background-color: #c099f4ff; }<br>
     <div class="cmt">/* Positioned 30px from the top of the parent (or body if no parent is relative) */</div><br><br>
     &lt;/style&gt;</code>
   </div>
