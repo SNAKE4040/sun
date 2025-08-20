@@ -27,36 +27,6 @@
 <script>
     getcour(3);
 </script>
-<!-- // document.getElementById('courForm').addEventListener('submit', function(e) {
-//   e.preventDefault(); // Prevent form reload
-
-//   const cour = document.getElementById('cour').value;
-//   const formData = new FormData();
-//   formData.append('cour', cour);
-
-//   fetch('get_cour.php', {
-//     method: 'POST',
-//     body: formData
-//   })
-//   .then(response => response.json())
-//   .then(data => {
-//     const container = document.getElementById('buttonsContainer');
-//     container.innerHTML = ''; // Clear previous buttons
-
-//     data.forEach((line, index) => {
-//       const btn = document.createElement('button');
-//       btn.type = 'submit';
-//       btn.name = 'action';
-//       btn.value = index;
-//       btn.textContent = line;
-//       container.appendChild(btn);
-//       container.appendChild(document.createElement('br'));
-//     });
-//   })
-//   .catch(error => {
-//     console.error('Error:', error);
-//   });
-// }); -->
 
 
 </body>
