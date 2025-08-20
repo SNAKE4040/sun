@@ -27,7 +27,7 @@ function getcour(ad){
   const formData = new FormData();
   formData.append('cour', cour);
 
-  fetch('get_cour.php', {
+  fetch('../control/get_cour.php', {
     method: 'POST',
     body: formData
   })
@@ -37,29 +37,42 @@ function getcour(ad){
     container.innerHTML = ''; // Clear previous buttons
 
     data.forEach((line, index) => {
-      const btn = document.createElement('button');
-      btn.type = 'submit';
-      btn.name = 'action';
-      btn.value = index;
-      btn.textContent = line;
-      if(ad<index){
-        btn.setAttribute('disabled', 'true');
-        btn.textContent = line + " (Locked)";
-        const lockarea = document.createElement('div');
-        lockarea.onclick = function() {
-          prompt("This course is locked. Please contact the administrator for access.");
-        };
-        lockarea.className = "lock-area";
-        container.appendChild(lockarea);
-        lockarea.appendChild(btn);
-      }
-      else {
+      if (line !="Unable to open file!" && line != "error") {
+       const btn = document.createElement('button');
+       btn.type = 'submit';
+       btn.name = 'action';
+       btn.value = index;
+       btn.textContent = line;
+       if(ad<index){
+         btn.setAttribute('disabled', 'true');
+         btn.textContent = line + " (Locked)";
+         const lockarea = document.createElement('div');
+         lockarea.onclick = function() {
+          alert("This course is locked. Please contact the administrator for access.");
+         };
+         lockarea.className = "lock-area";
+         container.appendChild(lockarea);
+         lockarea.appendChild(btn);
+        }
+       else {
         const unlockarea = document.createElement('div');
        unlockarea.className = "unlock-area";
        container.appendChild(unlockarea);
        unlockarea.appendChild(btn);
-      }
+       }
       container.appendChild(document.createElement('br'));
+    }else{
+      const errorMsg = document.createElement('div');
+      errorMsg.textContent = line;
+      errorMsg.style.color = '#fa0202ff';
+      errorMsg.style.fontWeight = 'bold';
+      errorMsg.style.textAlign = 'center';
+      errorMsg.style.fontSize = '1.2em';
+      errorMsg.style.border = '1px solid rgba(71, 60, 60, 1)';
+      errorMsg.style.padding = '10px';
+      container.appendChild(errorMsg);
+
+    }
     });
   })
   .catch(error => {
