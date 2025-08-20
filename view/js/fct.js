@@ -39,25 +39,24 @@ function getcour(ad){
     data.forEach((line, index) => {
       if (line !="Unable to open file!" && line != "error") {
        const btn = document.createElement('button');
-       btn.type = 'submit';
+       
        btn.name = 'action';
        btn.value = index;
        btn.textContent = line;
        if(ad<index){
-         btn.setAttribute('disabled', 'true');
+         btn.setAttribute('aria-disabled', 'true');
          btn.textContent = line + " (Locked)";
          const lockarea = document.createElement('div');
-         btn.onclick=function(){
+         btn.onclick = function(e) {
           alert("This course is locked. Please contact the administrator for access.");
-         }
-         lockarea.onclick = function() {
-          alert("This course is locked. Please contact the administrator for access.");
+          e.preventDefault();
          };
          lockarea.className = "lock-area";
          container.appendChild(lockarea);
          lockarea.appendChild(btn);
         }
        else {
+        btn.type = 'submit';
         const unlockarea = document.createElement('div');
        unlockarea.className = "unlock-area";
        container.appendChild(unlockarea);

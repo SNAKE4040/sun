@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Dynamic Course Buttons</title>
-  <link rel="stylesheet" href="./cour/css/style.css">
+  <link rel="stylesheet" href="../cour/css/english/style.css">
   <style>
     button { margin: 5px; padding: 8px 12px; }
   </style>
