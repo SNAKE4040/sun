@@ -95,13 +95,14 @@
             <div class="b">
                 <h2>Sign Up</h2>
                 <div class="c">
-                    <input type="text" name="nom" id="nom" placeholder="Nom Complet">
+                    <input type="text" name="name" id="name" placeholder="Nom Complet">
                 </div>
                 <div class="c">
                     <input type="email" name="email" id="email" placeholder="Email">
                 </div>
                 <div class="c">
                     <input type="password" name="password" id="password" placeholder="Mot de passe">
+                    <input type="hidden" name="action" value="signup">
                 </div>
                 <div class="c">
                     <input type="submit" value="Sign Up" name="signup">

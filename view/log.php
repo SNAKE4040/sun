@@ -114,9 +114,10 @@
                 </div>
                 <div class="c">
                     <input type="password" name="password" placeholder="password">
+                    <input type="hidden" name="action" value="login">
                 </div>
                 <div class="c">
-                    <input type="submit" value="log in" name="log in">
+                    <input type="submit" value="login" name="log_in">
                 </div>
             </div>
             </form>

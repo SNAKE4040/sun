@@ -89,11 +89,11 @@
 </head>
 <body>
     <div class="a">
-        <form action="" >
+        <form action="../control/controller_ad.php" method="post">
             <div class="b">
                 <h2>Hi Master </h2>
                 <div class="c">
-                    <input type="text">
+                    <input type="text" name="inputField">
                 </div>
                 <div class="c">
                     <input type="submit" value="valider">

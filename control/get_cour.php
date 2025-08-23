@@ -1,5 +1,11 @@
 <?php
+
 if (isset($_POST['cour'])) {
+    // session_start();
+    // $_SESSION['lng_slct'] = $_POST['cour'];
+    // if($_SESSION['lng_slct_index']!=""||$_SESSION['lng_slct']!="language"){
+    // $_SESSION['lng_slct'] = $client->getLanguage($_SESSION['lng_slct_index']);
+    // $cour = $_SESSION['lng_slct'];
     $cour = $_POST['cour'];
     $filePath = "../cour/" . $cour . "/plan.txt";
 
@@ -9,7 +15,11 @@ if (isset($_POST['cour'])) {
     } else {
         echo json_encode(["Unable to open file!"]);
     }
+// }else {
+//     echo json_encode(["select language"]);
+// }
 } else {
     echo json_encode(["error"]);
 }
+
 ?>

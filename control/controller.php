@@ -1,16 +1,19 @@
 <?php 
 require_once '../model/db_action.php';
 require_once '../model/client.php';
-$db = new db_action();
-if($_POST['login']){
-    $email = $_POST['email'];
+$db = new action($database);
+if($_POST['action'] == 'login'){
+    $email = $_POST['nom'];
     $password = $_POST['password'];
     $deviceId = $_POST['visitorId'];
-    if(cheque_admin($email,$deviceId)==true){
-        header("controller_ad.php");
+    if($db->cheque_admin($email,$deviceId)==true&&$db->cheque_admin($email,$deviceId)!="admin"){
+        header("Location: controller_ad.php");
+        echo "Admin connected";
+        exit();
     }
-    if (cheque_adminq($email,$deviceId)=="admin") {
-        header("../view/admin_verification.php");
+    if ($db->cheque_admin($email,$deviceId)=="admin" && $db->cheque_admin($email,$deviceId)==true) {
+        header("Location: ../view/admin_verification.php");
+        exit();
     } else {
     if(!isset($email) || !isset($password)) {
         echo "Veuillez remplir tous les champs.";
@@ -19,16 +22,37 @@ if($_POST['login']){
 
     $user = $db->checuser($email, $password);
     if($user) {
-        // Authentification réussie
+        
      session_start();
      $client = new client($user);
+     $client=serialize($client);
      $_SESSION['client'] = $client;
-     header("Location: ../view/accueil.php");
+     header("Location: ../view/acceul.php");
      exit();
 }
 }
 }
-$deviceId = $_POST['visitorId'];
+if(isset($_POST['action']) && $_POST['action'] == 'signup') {
+    $name = $_POST['name'];
+    // $exp = $_POST['exp'];
+    // $levl = $_POST['levl'];
+    // $language = $_POST['language'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    // $photo = $_POST['photo'];
 
-echo "Device ID: $deviceId";
+    if(empty($name)|| empty($email) || empty($password)) {
+        echo "Veuillez remplir tous les champs.";
+        exit;
+    }
+
+    if($db->add_user($name, $email, $password)) {
+        header("Location: ../view/log.php");
+        exit();
+    } else {
+        echo "Erreur lors de l'enregistrement.";
+    }
+}
+// echo $db->cheque_admin($email, $deviceId);
+
 ?>

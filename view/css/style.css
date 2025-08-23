@@ -256,7 +256,7 @@
         }
        .lock-area > button{
         border: 2px solid #130f0f;
-        background-image: url('../../../src/lock.png');
+        background-image: url('../../src/lock.png');
           background-size: cover;
           background-position: center;
           color: #130f0f;
@@ -267,6 +267,170 @@
           
           font-size: 22px;
        }
-       #courForm{
-        
+       #buttonsContainer{
+        margin-left: auto;
+        margin-right: auto;
+        overflow: auto;
+        max-height: 80vh;
        }
+      .plan_page {
+        overflow: hidden ;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+      }
+      .profile-photo {
+         position: relative;
+         height: 180px;;          /* display: flex; */
+          flex-direction: column;
+          justify-content: center;
+          margin-top: 10px;
+          background-color: #f0f0f0;
+          padding-top: 10px;
+          border: 1px solid #d3cece;
+          border-radius: 5px;
+      }
+      .profil {
+          position: absolute;
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          object-fit: cover;
+          top: calc(50% - 75px);
+          left: calc(50% - 75px);
+          border: 2px solid #0dc651;
+          z-index: 1;
+      }
+      body {
+  font-family: 'Arial', sans-serif;
+}
+
+.custom-upload , [name="save_photo"],.info-item button {
+  font-size: 12px;
+  background-color: #2883f3;
+  padding: 3px 8px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 10px;
+  color: white;
+
+}
+.custom-upload {
+  background-color: #8ebaf8;
+  top:calc(100% - 55px);
+  left: calc(70% - 75px);
+  position: absolute;
+  z-index: 2;
+}
+.photo{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+  border: 1px solid #d3cece;
+
+}
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.info-item > * {
+  height: 60%;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.profile-info2 {
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+  border: 1px solid #d3cece;
+  justify-content: space-around;
+}
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-bottom: 0.5em;
+}
+.info-item3 {
+  height: 50%;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+}
+.profile{
+  position: relative;
+  top:-10px;
+  padding-top: 10px;
+  width: 50%;
+  height: 95vh;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #e0dbdb;
+  border-radius: 10px;
+  overflow-y:auto;
+}
+.p_child {
+  margin-left: 1vw;
+  font-size: 17px;
+}
+
+
+@media (min-width: 714px) {
+  .profile {
+    width: 45%;
+  }}
+@media (max-width: 713px) {
+  .profile {
+    width: 90%;
+  }
+}
+@media(max-width: 1110px){
+  .lock-area , .unlock-area  {
+    width: 50%;
+  }
+  .lock-area > button, .unlock-area > button {
+    font-size: 20px;
+  }
+}
+@media (max-width: 800px) {
+  .lock-area , .unlock-area  {
+    width: 60%;
+  }
+  .lock-area > button, .unlock-area > button {
+    font-size: 20px;
+  }
+}
+@media (max-width: 600px) {
+    .lock-area , .unlock-area  {
+    width: 60%;
+  }
+  .lock-area > button, .unlock-area > button {
+    font-size: 15px;
+  }
+}
+@media (max-width: 400px) {
+
+  .lock-area , .unlock-area  {
+    width: 90%;
+  }
+  .lock-area > button, .unlock-area > button {
+    font-size: 15px;
+  }
+}

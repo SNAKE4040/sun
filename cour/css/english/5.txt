@@ -1,0 +1,13 @@
+<h1 class="cour">CSS</h1>
+<h1>Course 4: CSS Box Model</h1>
+<p>hi . i see you stay learning that mean you get something in our lesson we hope our conclusion be true ,because it's the idea or the purpose of this website </p>
+<p>so let's go back in this day we will learn <b>CSS Box Model</b> we will cover the folowing topic :</p>
+<ul>
+  <li>Understanding the box model</li>
+  <li>Margin, padding, and border properties</li>
+  <li>Box-sizing property</li>
+  <li>Box model best practices
+</li>
+</ul>
+<h2> what's box model ?</h2> 
+<p>be sure isn't a food (just kidding) ,box model it's 

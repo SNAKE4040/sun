@@ -34,4 +34,5 @@ class Database {
         $this->connection = null;
     }
 }
-$db= new Database();
+$database = new Database();
+?>

@@ -13,7 +13,6 @@ btn.addEventListener('click', function (event) {
       hidn.setAttribute('name', 'visitorId');
       hidn.setAttribute('value', visitorId);
       form.appendChild(hidn);
-     
       form.submit();    
      });
   });

@@ -1,3 +1,12 @@
+<?php
+require_once '../model/client.php';
+session_start();
+if (!isset($_SESSION['client'])) {
+    header("Location: ../view/login.php");
+    exit();
+}
+$client = unserialize($_SESSION['client']);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,8 +33,10 @@
 </form>
 
 <script src="./js/fct.js"></script>
-<script>
-    getcour(3);
+
+  <script>
+  const level = <?php echo json_encode($client->getlevel() ?? 0); ?>;
+  getcour(level / 10);
 </script>
 
 

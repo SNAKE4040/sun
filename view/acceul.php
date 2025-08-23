@@ -1,3 +1,14 @@
+
+<?php 
+        require_once '../model/client.php';
+        session_start(); 
+        if (isset($_SESSION['client']) && $_SESSION['client']) { 
+            $client = unserialize($_SESSION['client']);
+        } else { 
+            header("Location: controller.php"); 
+            exit(); 
+        } 
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +26,7 @@
         }
 
         html, body {
+            
             height: 100vh;
             font-family: Arial, sans-serif;
             overflow: hidden;
@@ -92,9 +104,9 @@
         padding: 10px;
     }
     .intro{
-        position: absolute;
+        /* position: absolute;
         top: 80px; 
-        left: 30px;
+        left: 30px; */
         z-index: 10;
         color: #F1F5F9; 
         background-color: rgba(0, 0, 0, 0.4); 
@@ -105,8 +117,24 @@
         max-width: 500px;
         line-height: 1.6;
         border-radius: 8px;
+        margin-bottom: 1rem;
     }
-    .intro {
+    /* .intro{
+        /* position: absolute;
+        top: 130px; 
+        left: 30px; */
+        /* z-index: 10;
+        color: #F1F5F9; 
+        background-color: rgba(0, 0, 0, 0.4); 
+        padding: 1rem 1.5rem;
+        border-left: 4px solid #3B82F6; 
+        font-size: 1.4rem;
+        font-weight: 500;
+        max-width: 500px;
+        line-height: 1.6;
+        border-radius: 8px; */
+   
+    .intro1, .intro {
         animation: fadeUp 1s ease-in-out;
     }
     @keyframes fadeUp {
@@ -161,6 +189,16 @@ footer .socials img {
     width: 20px;
     margin: 0 10px;
 }
+.content{
+    position: absolute;
+        top: 70px; 
+        left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: scroll;
+    max-height: calc(100vh - 200px);
+}
 
     </style>
 </head>
@@ -172,26 +210,35 @@ footer .socials img {
             <span class="name">Seren</span>
         </div>
         <ul>
-            <li><a href="#">LESSONS</a></li>
-            <li><a href="#">PROFILE</a></li>
+            <li><select>
+                <option value="language1">Language 1</option>
+                <option value="language2">Language 2</option>
+                <option value="language3">Language 3</option>
+            </select></li>
+            <li><a href="cours.php">LESSONS</a></li>
+            <li><a href="profil.php">PROFILE</a></li>
             <li><a href="#">QUIZ</a></li>
-            <li><a href="#">CONTACT</a></li>
+            <li><a href="contact.php">CONTACT</a></li>
         </ul>
     </nav>
-
-    <p class="intro">Empowering you to master coding step by step — anytime, anywhere.</p>
-    <div class="swiper-container gallery-slider">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide" style="background-image: url('../src/4.png');"></div>
-            <div class="swiper-slide" style="background-image: url('../src/5.png');"></div>
-            <div class="swiper-slide" style="background-image: url('../src/6.png');"></div>
-            <div class="swiper-slide" style="background-image: url('../src/7.png');"></div>
-            <div class="swiper-slide" style="background-image: url('../src/8.png');"></div>
-            <div class="swiper-slide" style="background-image: url('../src/9.png');"></div>
-        </div>
-        <div class="swiper-pagination"></div>
+<div class="content">
+<p class="intro">Welcome to SEREN,
+    hi <?php echo htmlspecialchars($client->getname()); ?>
+</p>
+<p class="intro">Empowering you to master coding step by step — anytime, anywhere.</p>
+</div>
+<div class="swiper-container gallery-slider">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" style="background-image: url('../src/4.png');"></div>
+        <div class="swiper-slide" style="background-image: url('../src/5.png');"></div>
+        <div class="swiper-slide" style="background-image: url('../src/6.png');"></div>
+        <div class="swiper-slide" style="background-image: url('../src/7.png');"></div>
+        <div class="swiper-slide" style="background-image: url('../src/8.png');"></div>
+        <div class="swiper-slide" style="background-image: url('../src/9.png');"></div>
     </div>
-    <footer>
+    <div class="swiper-pagination"></div>
+</div>
+<footer>
     <p>© 2025 SEREN. All rights reserved</p>
     <div class="socials">
         <a href="#"><img src="facebook.svg" alt="Facebook"></a>
