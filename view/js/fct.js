@@ -24,6 +24,7 @@ function getcour(ad){
   e.preventDefault(); // Prevent form reload
 
   const cour = document.getElementById('cour').value;
+
   const formData = new FormData();
   formData.append('cour', cour);
 

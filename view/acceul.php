@@ -223,7 +223,10 @@ footer .socials img {
     </nav>
 <div class="content">
 <p class="intro">Welcome to SEREN,
-    hi <?php echo htmlspecialchars($client->getname()); ?>
+    hi
+     <?php
+    //  echo htmlspecialchars($client->getname());
+     ?>
 </p>
 <p class="intro">Empowering you to master coding step by step — anytime, anywhere.</p>
 </div>

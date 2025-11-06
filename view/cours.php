@@ -34,10 +34,15 @@
 
 <script src="./js/fct.js"></script>
 
-  <script>
-  const level = <?php echo json_encode($client->getlevel() ?? 0); ?>;
-  getcour(level / 10);
-</script>
+   <script>
+  // const level = 
+  <?php 
+  // echo json_encode($client->getlevel() ?? 0);
+   ?>
+  // getcour(level / 10);
+  getcour(5);
+
+</script> 
 
 
 </body>
