@@ -1,0 +1,271 @@
+<h1 class="cour">CSS</h1>
+<h1>Course 5: CSS Layout</h1>
+<p>Without wasting time, let’s jump right into the subject. Today we will explain <b>CSS Layout</b>. In this lesson, we will cover the following topics:</p>
+<ul>
+    <li>Display property</li>
+    <li>Position property</li>
+    <li>Float and clear properties</li>
+    <li>Flexbox basics</li>
+</ul>
+
+<h2>Display property</h2>
+<p>So, what is the display property? In simple words, it controls the space a tag takes up. Not like the box model (which is about spacing inside and around elements), but how the element itself behaves on the page. Tags are divided into two main types:</p>
+<ul>
+<li><b>1- Block elements:</b> take the whole line space (p, div...)</li>
+<li><b>2- Inline elements:</b> take only the space of their content on the line (b, span...)</li>
+</ul>
+
+<div class="exp_2">
+    <div class="exp_2_1">
+        <code>&lt;style&gt;<br>
+        .parent { border:2px solid #000; padding:3px;}<br>
+        p { border:2px dashed #000; }<br>
+        b { border:2px dotted #000; }<br>
+        <div class="cmt">/* add borders to see the differences */</div>
+        &lt;/style&gt;<br><br>
+         &lt;body&gt;<br>
+         &lt;div class=&quot;parent&quot;&gt;<br>
+         &nbsp;&nbsp;
+          &lt;p&gt;normal Paragraph&lt;/p&gt;<br>
+         &lt;/div&gt;<br>
+         &lt;div class=&quot;parent&quot;&gt;<br>
+         &nbsp;&nbsp;
+          &lt;b&gt;bold words&lt;/b&gt;<br>
+         &lt;/div&gt;<br>
+    </code> 
+    </div>
+    <div class="exp_2_2">
+        <div style="border:2px solid #000; padding:6px;margin:3px;">
+            <p style="border:2px dashed #000;margin:auto;">normal Paragraph</p>
+        </div>
+        <div style="border:2px solid #000; padding:6px;margin:3px;">
+            <b style="border:2px dashed #000;">bold words</b>
+        </div>
+    </div>
+</div>
+
+<p>In the fourth bonus lesson, I mentioned that if you want to style height and width, you may need to change the display property. Now we can see that we can change display with CSS.</p> 
+<p>The property <b>display</b> lets us control this. We already mentioned it in the third lesson, but let’s go deeper now. Here are the most common values (block, inline, inline-block):</p>
+
+<div class="tbl_area">
+ <table class="tbl_2">
+ <tr><td class="tbl_2_h">Values</td><td class="tbl_2_2_h">Explanation</td></tr>
+<tr><td class="tbl_2_1">block</td><td class="tbl_2_2">Transforms the tag into a block element</td></tr>
+<tr><td class="tbl_2_1">inline</td><td class="tbl_2_2">Transforms the tag into an inline element</td></tr>
+<tr><td class="tbl_2_1_d">inline-block</td><td class="tbl_2_2_d">Behaves like inline, but you can style it like a block element (set width, height, etc.)</td></tr>
+</table>
+</div>
+<div class="exp_2">
+    <div class="exp_2_1">
+        <code>&lt;style&gt;<br>
+        .parent { border:2px solid #000; padding:3px;}<br>
+        p { border:2px dashed #000; display:inline }<br>
+        b { border:2px dotted #000; display:block; }<br>
+        <div class="cmt">/* change the block tag to inline and the inline to block */</div>
+        &lt;/style&gt;<br><br>
+         &lt;body&gt;<br>
+         &lt;div class=&quot;parent&quot;&gt;<br>
+         &nbsp;&nbsp;
+          &lt;p&gt;inline Paragraph&lt;/p&gt;<br>
+         &lt;/div&gt;<br>
+         &lt;div class=&quot;parent&quot;&gt;<br>
+         &nbsp;&nbsp;
+          &lt;b&gt;block bold words&lt;/b&gt;<br>
+         &lt;/div&gt;<br>
+         &lt;div class=&quot;parent&quot;&gt;<br>
+         &nbsp;&nbsp;
+          &lt;p style=&quot;display:inline-block;&quot;&gt;inline-block Paragraph&lt;/p&gt;<br>
+         &lt;/div&gt;<br>
+         &lt;div class=&quot;parent&quot;&gt;<br>
+         &nbsp;&nbsp;
+         &lt;b style=&quot;display:inline-block;&quot;&gt;inline-block bold words&lt;/b&gt;<br>
+         &lt;/div&gt;<br>
+    </code>
+    </div>
+    <div class="exp_2_2">
+        <div style="border:2px solid #000; padding:6px;margin:3px;">
+            <p style="border:2px dashed #000;margin:auto;display:inline;">inline Paragraph</p>
+        </div>
+        <div style="border:2px solid #000; padding:6px;margin:3px;">
+            <b style="border:2px dashed #000;display:block;">block bold words</b>
+        </div>
+        <div style="border:2px solid #000; padding:6px;margin:3px;">
+            <p style="border:2px dashed #000;display:inline-block;margin:auto;">inline-block Paragraph</p>
+        </div>
+        <div style="border:2px solid #000; padding:6px;margin:3px;">
+            <b style="border:2px dashed #000;display:inline-block;">inline-block bold words</b>
+        </div>
+    </div>
+</div>
+
+<h2>Position property</h2>
+<p>The position property defines how an element is placed on the page. By default, tags are positioned in the normal document flow (static). But we can change this behavior. Here are the most important values:</p>
+
+<div class="tbl_area">
+ <table class="tbl_2">
+ <tr><td class="tbl_2_h">Values</td><td class="tbl_2_2_h">Explanation</td></tr>
+<tr><td class="tbl_2_1">static</td><td class="tbl_2_2">Default position (elements follow normal document flow)</td></tr>
+<tr><td class="tbl_2_1">relative</td><td class="tbl_2_2">Positioned relative to its normal position</td></tr>
+<tr><td class="tbl_2_1">absolute</td><td class="tbl_2_2">Positioned relative to the nearest positioned ancestor</td></tr>
+<tr><td class="tbl_2_1_d">fixed</td><td class="tbl_2_2_d">Positioned relative to the viewport, does not move when scrolling</td></tr>
+</table>
+</div>
+
+<div class="exp_2">
+    <div class="exp_2_1">
+        <code>
+&lt;style&gt;<br>
+p{
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    position : static;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    top: 10px;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    left: 0;<br>
+}<br>
+p{
+    position:relative;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    top:10px;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    left:10px;<br>
+}<br>
+p{
+    position: absolute;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    top: 20px;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    left: 30px;<br>
+    <div class="cmt">/* the father should have position: relative;and the space necessary to move it */</div>
+}<br>
+p{
+    position: fixed;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    top: 40px;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    left: 50px;
+    <div class="cmt">/* cheque the fixed cheque box to see it (we do that with javascript to see the lesson clearly) */</div>
+}<br>
+p{
+  position: sticky;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  top: 200px;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  left: 0;
+  <div class="cmt">/* cheque the sticky cheque box to see it (we do that with javascript to see the lesson clearly) */</div>
+}<br>
+&lt;/style&gt;<br><br>
+        </code>
+
+    </div>
+    <div class="exp_2_2">
+        <div class="real_exp" id="ex_static">
+        <p style="position: static; top: 10px; left: 0; border:2px solid #000; padding:3px; margin:3px;background-color: #bbf29fff;">static Paragraph</p>
+        </div>
+        <div class="real_exp" id="ex_relative">
+        <p style="position: relative; top: 10px; left: 10px; border:2px solid #000; padding:3px; margin:3px;background-color: #bbf29fff;">relative Paragraph</p>
+        </div>
+        <div class="real_exp" id="ex_absolute" style="position: relative; height: 100px; border:2px dashed #000; padding:3px; margin:3px; overflow:auto;">
+        <p style="position: absolute; top: 20px; left: 30px; border:2px solid #000; padding:3px; margin:3px; background-color: #bbf29fff;">absolute Paragraph</p>
+        </div>
+
+        <div class="real_exp" id="ex_fixed" style="display: none;"></div>
+        <div class="real_exp" id="ex_sticky" style="display: none;height: 100px;"></div>
+      <div> <input type="checkbox" id="fixed_btn">fixed Paragraph</div>
+       <div> <input type="checkbox" id="sticky">sticky Paragraph</div>
+
+    </div>
+
+</div>
+
+<h2>Float and Clear properties</h2>
+<p>Float is an older technique used to position elements (like images) to the left or right, letting text wrap around them. Clear is used to prevent wrapping and “reset” the flow.</p>
+
+<div class="exp_2">
+    <div class="exp_2_1">
+        <code>
+&lt;style&gt;<br>
+          img{<br>
+            &nbsp;&nbsp;
+            float: none;<div class="cmt"> /* default  */</div><br>
+            &nbsp;&nbsp;
+            margin: 0 10px 10px 0;<div class="cmt"> /* to give space around the image */</div><br>
+
+          }<br>
+          .img{<br>
+            &nbsp;
+            &nbsp;
+            float: left;<div class="cmt"> /* try also right */</div><br>
+            &nbsp;
+            &nbsp;
+            margin: 0 10px 10px 0; <div class="cmt">/* to give space around the image */</div><br>
+          }<br>
+          .text{<br>
+            &nbsp;
+            &nbsp;
+            display: block;<div class="cmt"> /* to be in a new line */</div><br>
+            &nbsp;
+            &nbsp;
+           clear: both;<div class="cmt"> /* to clear floated elements */</div><br>
+          }<br>
+          .text{
+            <br>
+            &nbsp;
+            &nbsp;
+            display: block;<br>
+            &nbsp;
+            &nbsp;
+            clear: left;<div class="cmt"> /* to clear floated left elements */</div><br>
+          }
+          &lt;/style&gt;
+        </code>
+    </div>
+  <div class="exp_2_2">
+    <div class="real_exp">
+        <img src="../src/flower.png" alt="image" style="float: left; margin: 0 10px 10px 0; width: 90px; height: 90px;">
+        <span>default text after the img with class text</span>
+    </div>
+
+    <div class="real_exp">
+        <img src="../src/flower.png" alt="image" style="float: right; margin: 0 10px 10px 0; width: 90px; height: 90px;">
+        <span>default text after the img with class text</span>
+    </div>
+
+    <div class="real_exp">
+        <img src="../src/flower.png" alt="image" style="float: right; margin: 0 10px 10px 0; width: 90px; height: 90px;">
+        <span style="display: block; clear: both;">clear both with img floating right</span>
+    </div>
+
+    <div class="real_exp">
+        <img src="../src/flower.png" alt="image" style="float: left; margin: 0 10px 10px 0; width: 90px; height: 90px;">
+        <span style="display: block; clear: left;">clear left with img floating left</span>
+    </div>
+</div>
+        </div>
+</div>
+
+<h2>Flexbox Basics</h2>
+<p>Flexbox is a modern and powerful layout system in CSS. It makes it much easier to arrange elements in rows or columns, and to align or distribute space between them. It’s flexible (hence the name) and widely used today.</p>
+
+<div class="exp">
+        <code>
+        .boxflex{<br>
+            display: flex;<br>
+           <div class="cmt"> /* to enable flex context and be a flex box */</div><br>
+        }
+        </code>
+</div>
+
+<h2>🎁 Bonus Tip:</h2>
+<ul>
+  <li>We use sticky position for section headers and table column labels, and fixed for sticky headers, floating buttons, or alerts. In short, both are useful for simple animations or page decorations.</li>
+  <li>Display inline-block is used when you want to control the size and position of an inline tag.</li>
+  <li>Float works mostly with text and images. It’s often used in news websites where text wraps around images.</li>
+  <li>Clear is used when you want to stop a specific element from moving next to a floating element.</li>
+  <li>Clear should be applied to a block element to move it to the next line.</li>
+  <li>Flexbox is a large topic that we will cover in the next course.</li>
+</ul>
+
+<script>
+    setInterval(fix_sti_exp,10);
+</script>

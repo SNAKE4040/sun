@@ -2,177 +2,306 @@
 <html>
     <head>
         <link rel="stylesheet" href="./css/style.css">
+        <script src="./js/fct.js"></script>
     </head>
 <body>
-  <h1 class="cour">CSS</h1>
-<h1>Course 3: CSS Properties</h1>
-<p>Hi, we meet again! This is the third lesson after the introduction. You have already learned about ("CSS Cascade", "CSS Syntax", and "CSS Selectors"), and now you know many CSS properties that we used in the examples.</p>
-<p>Congratulations! At this point, you’ve passed the beginner stage. I'm really happy and proud of you. But here, I will just give you the information. Yes, you’ve done some quizzes, but you don’t yet have real experience.</p>
-<p>For that reason, our website provides free coding space. Just click on the <b>Code</b> button at the top, choose your programming language, and feel free to explore programming without limits!</p>
-<p>But don’t worry—you are part of us. We are ready to do everything we can to help you in the programming world.</p>
-<p>Now, let’s get back to the lesson. Today, we will learn the properties of <b>CSS</b>. We will cover the following topics:</p>
 
+
+<h1 class="cour">CSS</h1>
+<h1>Course 6: Lesson 6: CSS Flexbox</h1>
+<p>hi.i hope to have a good day today we have <b>CSS Flexbox</b> in it we will cover the next : </p>
 <ul>
-  <li>Text properties</li>
-  <li>Background properties</li>
-  <li>Box model properties</li>
-  <li>Positioning properties</li>
-  <li>Context properties</li>
+    <li>Flex container and flex items</li>
+    <li>Flex direction and wrap properties</li>
+    <li>Justify content and align items properties</li>
+    <li>Flexbox best practices</li>
 </ul>
-
-<h2>Intro</h2>
-<p>CSS has a lot of properties. To make it easier, we divide them into groups like this:</p>
-
-<!-- TEXT PROPERTIES -->
-<h2>1 - Text Properties</h2>
-<p>Used to style text content: size, weight, font family, alignment, and more.</p>
+<h2>Flex and flex items</h2>
+<p>Flexbox (Flexible Box Layout) is a CSS layout model that makes it easier to design responsive layouts without using floats or positioning. It’s perfect for dynamic content and adaptable interfaces.</p>
+<p>flex box have to main part Flexbox-Container and flexbox-items</p>
+<p>we will show you the difrents betwwen flexbox-cntainer and flexbox-items in the following table :</p>
+<div class="tbl_area">
+ <table class="tbl_2">
+ <tr><td class="tbl_2_h">role</td><td class="tbl_2_2_h">description</td></tr>
+<tr><td class="tbl_2_1">Flex Container</td><td class="tbl_2_2">The parent element with display: flex or inline-flex</td></tr>
+<tr><td class="tbl_2_1_d">Flex Items</td><td class="tbl_2_2_d">The direct children of the flex container that are laid out using flex rules</td></tr>
+</table>
+</div>
 <div class="exp_2">
-  <div class="exp_2_1">
-    <code>&lt;style&gt;<br>
-    div { text-align: center; }<br>
-    <div class="cmt">/* Align text to the center */</div><br><br>
-
-    div { font-weight: bold; }<br>
-    <div class="cmt">/* Make text bold */</div><br><br>
-
-    div { font-style: italic; }<br>
-    <div class="cmt">/* Make text italic */</div><br><br>
-    &lt;/style&gt;</code>
-  </div>
-  <div class="exp_2_2">
-    <div style="text-align: center" class="real_exp">Centered text</div>
-    <div style="font-weight: bold" class="real_exp">Bold text</div>
-    <div style="font-style: italic" class="real_exp">Italic text</div>
-  </div>
+   <div class="exp_2_1">
+     <code>
+       &lt; style &gt;
+       p{<br>
+       &nbsp; &nbsp;
+       display:flex;<br>
+       <div class="cmt">/* this creat a flex box with p flex-container and their children flex-items */ </div>
+         &nbsp; &nbsp;
+         justify-content: space-around;<br>
+         <div class="cmt">/* this property for the space between the items */ </div>
+            &nbsp; &nbsp;
+       background-color: #d6ffe4ff; justify-content :space-around ;
+       }<br>
+       .p_children{<br>
+       &nbsp; &nbsp;
+       background-color: #ba59cbff;<br>
+       }
+       </code>
+    </div>
+    <div class="exp_2_2">
+      <div class="real_exp" style="display: flex; background-color: #ecededff; justify-content: space-around;">
+        <div style="background-color: #e7b2f0ff;">children 1/4 </div>
+        <div style="background-color: #e7b2f0ff;">children 2/4 </div>
+        <div style="background-color: #e7b2f0ff;">children 3/4 </div>
+        <div style="background-color: #e7b2f0ff;">children 4/4 </div>
+      </div>
+    </div>
 </div>
-
+<h2>Flex direction and wrap properties</h2>
+<p>flex direction is a property for placed the items (for more explanation flex placed items like a table ) vertical or horizantal . </p>
+<p>flex wrap work when the space taked by cheldren big of the flex container space (can put them down if the direction was vertical new colmun if horizantal)</p>
+<p> the explanation was in the following tables :</p>
 <div class="tbl_area">
-<table class="tbl_3">
-<tr><td class="tbl_3_1_h">Property</td> <td class="tbl_3_2_h">Values</td> <td class="tbl_3_3_h">Description</td></tr>
-<tr><td class="tbl_3_1">color</td> <td class="tbl_3_2">rgb(), hexadecimal (#fff), keyword (white)</td> <td class="tbl_3_3">Change the text color</td></tr>
-<tr><td class="tbl_3_1">font-family</td> <td class="tbl_3_2">"Font name", generic families (serif, sans-serif)</td> <td class="tbl_3_3">Change the typeface</td></tr>
-<tr><td class="tbl_3_1">font-size</td> <td class="tbl_3_2">px, em, rem, %, etc.</td> <td class="tbl_3_3">Set the text size</td></tr>
-<tr><td class="tbl_3_1">font-weight</td> <td class="tbl_3_2">normal, bold, 100–900</td> <td class="tbl_3_3">Set the text boldness</td></tr>
-<tr><td class="tbl_3_1">font-style</td> <td class="tbl_3_2">italic, normal, oblique</td> <td class="tbl_3_3">Set the text style</td></tr>
-<tr><td class="tbl_3_1">text-align</td> <td class="tbl_3_2">left, right, center, justify, start, end</td> <td class="tbl_3_3">Horizontal alignment</td></tr>
-<tr><td class="tbl_3_1">text-transform</td> <td class="tbl_3_2">uppercase, lowercase, capitalize, none</td> <td class="tbl_3_3">Control capitalization</td></tr>
-<tr><td class="tbl_3_1">letter-spacing</td> <td class="tbl_3_2">px, em, etc.</td> <td class="tbl_3_3">Space between letters</td></tr>
-<tr><td class="tbl_3_1">word-spacing</td> <td class="tbl_3_2">px, em, etc.</td> <td class="tbl_3_3">Space between words</td></tr>
-<tr><td class="tbl_3_1">line-height</td> <td class="tbl_3_2">normal, number, px, em</td> <td class="tbl_3_3">Space between lines</td></tr>
-<tr><td class="tbl_3_1">text-decoration</td> <td class="tbl_3_2">underline, none, overline, line-through</td> <td class="tbl_3_3">Add or remove text decoration</td></tr>
-<tr><td class="tbl_3_1">white-space</td> <td class="tbl_3_2">normal, nowrap, pre, pre-wrap</td> <td class="tbl_3_3">Control wrapping and spacing</td></tr>
-<tr><td class="tbl_3_1">direction</td> <td class="tbl_3_2">rtl, ltr, inherit</td> <td class="tbl_3_3">Text direction</td></tr>
-<tr><td class="tbl_3_1_d">writing-mode</td> <td class="tbl_3_2">horizontal-tb, vertical-rl, vertical-lr</td> <td class="tbl_3_3_d">Text flow direction</td></tr>
+ <table class="tbl_2">
+   <tr><td class="tbl_2_h">value</td><td class="tbl_2_2_h">description</td></tr>
+   <tr><td class="tbl_2_1">row (horizantal LTR: →)</td><td class="tbl_2_2">Default. Items flow left to right</td></tr>
+   <tr><td class="tbl_2_1">row-reverse (horizantal RTL: ←)</td><td class="tbl_2_2">Items flow right to left</td></tr>
+   <tr><td class="tbl_2_1">colmun (vertical ⬇)</td><td class="tbl_2_2">Items flow top to bottom</td></tr>
+   <tr><td class="tbl_2_1_d">colmun-reverse (vertical ⬆)</td><td class="tbl_2_2_d">Items flow bottom to top</td></tr>
 </table>
 </div>
-
-<!-- BACKGROUND PROPERTIES -->
-<h2>2 - Background Properties</h2>
-<p>Used for full background management like color, image, position, and attachment.</p>
+<div class="tbl_area">
+ <table class="tbl_2">
+   <tr><td class="tbl_2_h">value</td><td class="tbl_2_2_h">description</td></tr>
+   <tr><td class="tbl_2_1">nowrap Container</td><td class="tbl_2_2">Default. All items stay on one line (may overflow)</td></tr>
+   <tr><td class="tbl_2_1">wrap</td><td class="tbl_2_2">Items wrap to the next line when needed</td></tr>
+   <tr><td class="tbl_2_1_d">wrap-reverse</td><td class="tbl_2_2_d">Items wrap in reverse order (bottom to top or right to left)</td></tr>
+</table>
+</div>
 <div class="exp_2">
-  <div class="exp_2_1">
-    <code>&lt;style&gt;<br>
-    p { background-image: url("flower.png"); }<br>
-    <div class="cmt">/* Set an image as the background */</div><br><br>
-    &lt;/style&gt;</code>
-  </div>
-  <div class="exp_2_2">
-    <div style="background-image:url('../src/flower.png'); background-size: auto;height:100px;background-position: center;" class="real_exp"></div>
-  </div>    
-</div>
+    <div class="exp_2_1">
+         <code>
+       &lt; style &gt;
+       .flexbox{<br>
+       &nbsp; &nbsp;
+       display:flex;<br>
+       &nbsp; &nbsp;
+       flex-direction:row;<br>
+            &nbsp; &nbsp;
+       background-color: #d6ffe4ff; <br>
+       }<br>
+        .flexbox2{<br>
+       &nbsp; &nbsp;
+       display:flex;<br>
+       &nbsp; &nbsp;
+       flex-direction:colmun;<br>
+            &nbsp; &nbsp;
+       background-color: #d6ffe4ff; <br>
+       }<br>
+        .flexbox3{<br>
+       &nbsp; &nbsp;
+       display:flex;<br>
+       &nbsp; &nbsp;
+       flex-direction:row-reverse;<br>
+            &nbsp; &nbsp;
+       background-color: #d6ffe4ff; <br>
+       }<br>
+        .flexbox4{<br>
+       &nbsp; &nbsp;
+       display:flex;<br>
+       &nbsp; &nbsp;
+       flex-direction:row-reverse;<br>
+            &nbsp; &nbsp;
+       background-color: #d6ffe4ff; <br>
+       }<br>
+       .containt{<br>
+        &nbsp; &nbsp;
+       width:40px;<br>
+       &nbsp; &nbsp;
+       height:40px;<br>
+       }<br>
+       &nbsp; &nbsp;
+       &lt; /style &gt;<br>
+       &lt; body &gt;<br>
+       &nbsp; &nbsp;
+       &lt; div class="flexbox" &gt;<br>
+       &nbsp; &nbsp;&lt; img class="containt"  src="flower.png"&gt;<br>
+       &nbsp; &nbsp;&lt; img class="containt"  src="flower.png"&gt;<br>
+       &nbsp; &nbsp;&lt; img class="containt"  src="flower.png"&gt;<br>
+       &nbsp; &nbsp;&lt; img class="containt"  src="flower.png"&gt;<br>
+       &nbsp; &nbsp;&lt; /div &gt;<br>
+        &lt; div class="flexbox2" &gt;<br>
+       &nbsp; &nbsp;&lt; img class="containt"  src="flower.png"&gt;<br>
+       &nbsp; &nbsp;&lt; img class="containt"  src="flower.png"&gt;<br>
+       &nbsp; &nbsp;&lt; img class="containt"  src="flower.png"&gt;<br>
+       &nbsp; &nbsp;&lt; img class="containt"  src="flower.png"&gt;<br>
+       &nbsp; &nbsp;&lt; /div &gt;<br>
+        &lt; div class="flexbox3" &gt;<br>
+       &nbsp; &nbsp;&lt; img class="containt"  src="flower.png"&gt;<br>
+       &nbsp; &nbsp;&lt; img class="containt"  src="flower.png"&gt;<br>
+       &nbsp; &nbsp;&lt; img class="containt"  src="flower.png"&gt;<br>
+       &nbsp; &nbsp;&lt; img class="containt"  src="flower.png"&gt;<br>
+       &nbsp; &nbsp;&lt; /div &gt;<br>
+        &lt; div class="flexbox4" &gt;<br>
+       &nbsp; &nbsp;&lt; img class="containt"  src="flower.png"&gt;<br>
+       &nbsp; &nbsp;&lt; img class="containt"  src="flower.png"&gt;<br>
+       &nbsp; &nbsp;&lt; img class="containt"  src="flower.png"&gt;<br>
+       &nbsp; &nbsp;&lt; img class="containt"  src="flower.png"&gt;<br>
+       &nbsp; &nbsp;&lt; /div &gt;<br>
+       &nbsp; &nbsp;
+       &lt; body &gt;<br>
 
-<div class="tbl_area">
-<table class="tbl_3">
-<tr><td class="tbl_3_1_h">Property</td> <td class="tbl_3_2_h">Values</td> <td class="tbl_3_3_h">Description</td></tr>
-<tr><td class="tbl_3_1">background-color</td> <td class="tbl_3_2">rgb(), hexadecimal (#fff), keyword (white)</td> <td class="tbl_3_3">Change the background color</td></tr>
-<tr><td class="tbl_3_1">background-image</td> <td class="tbl_3_2">url("img_link"), none, linear-gradient()</td> <td class="tbl_3_3">Set a background image</td></tr>
-<tr><td class="tbl_3_1">background-repeat</td> <td class="tbl_3_2">repeat, repeat-x, repeat-y, no-repeat, space, round</td> <td class="tbl_3_3">Control image repetition</td></tr>
-<tr><td class="tbl_3_1">background-position</td> <td class="tbl_3_2">center, top left, bottom right, %, px</td> <td class="tbl_3_3">Set image position</td></tr>
-<tr><td class="tbl_3_1">background-size</td> <td class="tbl_3_2">cover, contain, auto, %, px</td> <td class="tbl_3_3">Define image scaling</td></tr>
-<tr><td class="tbl_3_1">background-attachment</td> <td class="tbl_3_2">scroll, fixed, local</td> <td class="tbl_3_3">Background scroll behavior</td></tr>
-<tr><td class="tbl_3_1">background-clip</td> <td class="tbl_3_2">border-box, padding-box, content-box, text</td> <td class="tbl_3_3">Defines the painting area</td></tr>
-<tr><td class="tbl_3_1_d">background-origin</td> <td class="tbl_3_2">border-box, padding-box, content-box</td> <td class="tbl_3_3_d">Positioning reference box</td></tr>
-</table>
-</div>
+       </code>
+    </div>
+    <div class="exp_2_2">
+            <div style="display:flex; flex-direction:row; background-color:#d6ffe4ff;border:2px dashed black; height:auto;">
+                <img src="../src/flower.png" alt="" style="width:40px; height:40px;">
+                <img src="../src/flower.png" alt="" style="width:40px; height:40px;">
+                <img src="../src/flower.png" alt="" style="width:40px; height:40px;">
+                <img src="../src/flower.png" alt="" style="width:40px; height:40px;">
+            </div>
+            <div style="display:flex; flex-direction:column; background-color:#d6ffe4ff;border:2px dashed black; height: 180px;">
+                <img src="../src/flower.png" alt="" style="width:40px; height:40px;">
+                <img src="../src/flower.png" alt="" style="width:40px; height:40px;">
+                <img src="../src/flower.png" alt="" style="width:40px; height:40px;">
+                <img src="../src/flower.png" alt="" style="width:40px; height:40px;">
+            </div>
+            <div style="display:flex; flex-direction:row-reverse; background-color:#d6ffe4ff;border:2px dashed black; height:auto;">
+                <img src="../src/flower.png" alt="" style="width:40px; height:40px;">
+                <img src="../src/flower.png" alt="" style="width:40px; height:40px;">
+                <img src="../src/flower.png" alt="" style="width:40px; height:40px;">
+                <img src="../src/flower.png" alt="" style="width:40px; height:40px;">
+            </div>
+            <div style="display:flex; flex-direction:column-reverse; background-color:#d6ffe4ff;border:2px dashed black; height: 180px;">
+                <img src="../src/flower.png" alt="" style="width:40px; height:40px;">
+                <img src="../src/flower.png" alt="" style="width:40px; height:40px;">
+                <img src="../src/flower.png" alt="" style="width:40px; height:40px;">
+                <img src="../src/flower.png" alt="" style="width:40px; height:40px;">
+            </div>
 
-<!-- BOX MODEL -->
-<h2>3 - Box Model Properties</h2>
-<p>Used for layout control, especially in responsive designs.</p>
+    </div>
+    </div>
 <div class="exp_2">
-  <div class="exp_2_1">
-    <code>&lt;style&gt;<br>
-    p { width: 30%; margin-left: auto; margin-right: auto; }<br>
-    <div class="cmt">/* Paragraph width is 30% of the parent, centered horizontally */</div><br><br>
-    &lt;/style&gt;</code>
-  </div>
-  <div class="exp_2_2">
-    <div class="real_exp">Normal paragraph</div>
-    <div style="margin-left:auto; margin-right:auto; width:30%;" class="real_exp">Styled paragraph</div>
-  </div>    
-</div>
+    <div class="exp_2_1">
+         <code>
+       &lt; style &gt;
+       .flexbox{<br>
+       &nbsp; &nbsp;
+       display:flex;<br>
+       &nbsp; &nbsp;
+       flex-direction:row;<br>
+            &nbsp; &nbsp;
+       background-color: #d6ffe4ff; <br>
+       &nbsp; &nbsp;
+       flex-wrap: wrap; <br>
+       }<br>
+        .flexbox2{<br>
+       &nbsp; &nbsp;
+       display:flex;<br>
+       &nbsp; &nbsp;
+       flex-direction:colmun;<br>
+            &nbsp; &nbsp;
+       background-color: #d6ffe4ff; <br>
+        &nbsp; &nbsp;
+       flex-wrap: wrap; <br>
+       }<br>
+       .containt{<br>
+        &nbsp; &nbsp;
+       width:40px;<br>
+       &nbsp; &nbsp;
+       height:40px;<br>
+       }<br>
+       &nbsp; &nbsp;
+       &lt; /style &gt;<br>
+       &lt; body &gt;<br>
+       &nbsp; &nbsp;
+       &lt; div class="flexbox" &gt;<br>
+       &nbsp; &nbsp;&lt; img class="containt"  src="flower.png"&gt;<br>
+       &nbsp; &nbsp;&lt; img class="containt"  src="flower.png"&gt;<br>
+       &nbsp; &nbsp;&lt; img class="containt"  src="flower.png"&gt;<br>
+       &nbsp; &nbsp;&lt; img class="containt"  src="flower.png"&gt;<br>
+       &nbsp; &nbsp;&lt; /div &gt;<br>
+        &lt; div class="flexbox2" &gt;<br>
+       &nbsp; &nbsp;&lt; img class="containt"  src="flower.png"&gt;<br>
+       &nbsp; &nbsp;&lt; img class="containt"  src="flower.png"&gt;<br>
+       &nbsp; &nbsp;&lt; img class="containt"  src="flower.png"&gt;<br>
+       &nbsp; &nbsp;&lt; img class="containt"  src="flower.png"&gt;<br>
+       &nbsp; &nbsp;&lt; /div &gt;<br>
+       &lt; body &gt;<br>
 
-<div class="tbl_area">
-<table class="tbl_3">
-<tr><td class="tbl_3_1_h">Property</td> <td class="tbl_3_2_h">Values</td> <td class="tbl_3_3_h">Description</td></tr>
-<tr><td class="tbl_3_1">width / height</td> <td class="tbl_3_2">auto, %, px, em, min-content, max-content</td> <td class="tbl_3_3">Size of the content area</td></tr>
-<tr><td class="tbl_3_1">padding</td> <td class="tbl_3_2">px, em, %</td> <td class="tbl_3_3">Space inside the element, around the content</td></tr>
-<tr><td class="tbl_3_1">border</td> <td class="tbl_3_2">width style color</td> <td class="tbl_3_3">Border around the element</td></tr>
-<tr><td class="tbl_3_1">outline</td> <td class="tbl_3_2">width style color</td> <td class="tbl_3_3">Outline outside the border (not part of the box model)</td></tr>
-<tr><td class="tbl_3_1">margin</td> <td class="tbl_3_2">px, em, %</td> <td class="tbl_3_3">Space outside the element</td></tr>
-<tr><td class="tbl_3_1_d">box-sizing</td> <td class="tbl_3_2">content-box, border-box</td> <td class="tbl_3_3_d">How width/height are calculated</td></tr>
-</table>
-</div>
+       </code>
+    </div>
+    <div class="exp_2_2">
+            <div style="display:flex; flex-direction:row; background-color:#d6ffe4ff;border:2px dashed black;width: 110px;flex-wrap:wrap;">
+                <img src="../src/flower.png" alt="" style="width:40px; height:40px;">
+                <img src="../src/flower.png" alt="" style="width:40px; height:40px;">
+                <img src="../src/flower.png" alt="" style="width:40px; height:40px;">
+                <img src="../src/flower.png" alt="" style="width:40px; height:40px;">
+            </div>
+            <div style="display:flex; flex-direction:column; background-color:#d6ffe4ff;border:2px dashed black; height: 90px;flex-wrap:wrap;">
+                <img src="../src/flower.png" alt="" style="width:40px; height:40px;">
+                <img src="../src/flower.png" alt="" style="width:40px; height:40px;">
+                <img src="../src/flower.png" alt="" style="width:40px; height:40px;">
+                <img src="../src/flower.png" alt="" style="width:40px; height:40px;">
+            </div>
+    </div>
+    </div>
 
-<!-- POSITIONING -->
-<h2>4 - Positioning Properties</h2>
-<p>Used to manage element positioning.</p>
-<div class="exp_2">
-  <div class="exp_2_1">
-    <code>&lt;style&gt;<br>
-    p { position: absolute; top:30px; background-color: #c099f4ff; }<br>
-    <div class="cmt">/* Positioned 30px from the top of the parent (or body if no parent is relative) */</div><br><br>
-    &lt;/style&gt;</code>
-  </div>
- <div style="position:relative; border: #0c010e dashed 2px;" class="exp_2_2">
-    <div style="position:absolute; top:30px;background-color:#c099f4ff; border:2px solid #000; height:40px; padding :2px;" class="real_exp">Absolute paragraph</div>
-  </div>    
-</div>
+<h2>justify content and align items properties</h2>
+<p>justify content distributes the space horizontally (if flex-direction: row) or vertically (if flex-direction: column)—depending on your main axis.
+</p>
+<p>align items controls how items are aligned perpendicular to the main axis—so vertical alignment in a row layout, or horizontal in a column layout.
+</p>
+<--------------------------------------------example----------------------------------------->
 
-<div class="tbl_area">
-<table class="tbl_3">
-<tr><td class="tbl_3_1_h">Property</td> <td class="tbl_3_2_h">Values</td> <td class="tbl_3_3_h">Description</td></tr>
-<tr><td class="tbl_3_1">position</td> <td class="tbl_3_2">static, relative, absolute, fixed, sticky</td> <td class="tbl_3_3">Defines the positioning method</td></tr>
-<tr><td class="tbl_3_1">top / bottom</td> <td class="tbl_3_2">px, %, em</td> <td class="tbl_3_3">Vertical offset</td></tr>
-<tr><td class="tbl_3_1">left / right</td> <td class="tbl_3_2">px, %, em</td> <td class="tbl_3_3">Horizontal offset</td></tr>
-<tr><td class="tbl_3_1">inset</td> <td class="tbl_3_2">px, %, em</td> <td class="tbl_3_3">Shorthand for top, right, bottom, left</td></tr>
-<tr><td class="tbl_3_1">float</td> <td class="tbl_3_2">left, right</td> <td class="tbl_3_3">Floats the element to one side</td></tr>
-<tr><td class="tbl_3_1">z-index</td> <td class="tbl_3_2">number</td> <td class="tbl_3_3">Stacking order</td></tr>
-<tr><td class="tbl_3_1_d">clear</td> <td class="tbl_3_2">left, right, both, none</td> <td class="tbl_3_3_d">Prevents wrapping around floated elements</td></tr>
-</table>
-</div>
-
-<!-- CONTEXT -->
-<h2>5 - Context Properties</h2>
-<div class="exp">
-  <code>&lt;style&gt;<br>
-  b { display: block; background-color: #5a1ea9; }<br>
-  <div class="cmt">/* Block elements take the full width and push the next element below */</div><br>
-  &lt;/style&gt;</code>
-</div>
-
-<div class="tbl_area">
-<table class="tbl_3">
-<tr><td class="tbl_3_1_h">Property</td> <td class="tbl_3_2_h">Values</td> <td class="tbl_3_3_h">Description</td></tr>
-<tr><td class="tbl_3_1">display</td> <td class="tbl_3_2">block, inline, flex, inline-block, grid</td> <td class="tbl_3_3">Determines the element’s display type</td></tr>
-<tr><td class="tbl_3_1_d">overflow</td> <td class="tbl_3_2">visible, hidden, scroll, auto</td> <td class="tbl_3_3_d">Controls content overflow</td></tr>
-</table>
-</div>
-
-<!-- BONUS -->
+<h2>Flexbox best practices</h2>
+<p>Flexbox is a powerhouse for responsive, fluid layouts—especially for one-dimensional arrangements. Since you're already deep into CSS and UI design,here their best practices :</p>
+<ul>
+<li><b>Core Setup :</b></li>
+  <ul style="list-style-type: none;">
+  <li class="li_dt">- Use display: flex on the container.</li>
+  <li class="li_dt">- Set flex-direction to control layout flow (row, column, etc.) .</li>
+  <li class="li_dt">- Use justify-content for main axis alignment.</li>
+  <li class="li_dt">- Use align-items for cross axis alignment.</li>
+  <li class="li_dt">- Use align-self to override alignment per item.</li>
+    </ul>
+<li><b>Sizing & Spacing :</b></li>
+  <ul style="list-style-type: none;">
+  <li class="li_dt">- Use flex: 1 to make items grow and fill space .</li>
+  <li class="li_dt">- Use flex: 0 1 auto for default behavior.</li>
+  <li class="li_dt">- Prefer gap over margins for spacing between items.</li>
+  <li class="li_dt">- Avoid fixed width/height unless necessary</li>
+  <li class="li_dt">- Use flex-basis to set initial size before growing/shrinking.</li>
+  </ul>
+<li><b>Responsive Design :</b></li>
+  <ul style="list-style-type: none;">
+  <li class="li_dt">- Enable wrapping with flex-wrap: wrap.</li>
+  <li class="li_dt">- Use flex-direction: column for mobile stacking.</li>
+  <li class="li_dt">- Combine media queries with Flexbox for adaptive layouts.</li>
+  <li class="li_dt">- Use min-width and max-width for flexible constraints.</li>
+    </ul>
+<li><b>Advanced Layouts :</b></li>
+  <ul style="list-style-type: none;">
+  <li class="li_dt">- Nest flex containers for complex structures.</li>
+  <li class="li_dt">- Use order sparingly to rearrange items.</li>
+  <li class="li_dt">- Use align-content for multi-line control when wrapping.</li>
+  <li class="li_dt">- Use flex-shrink: 0 to prevent shrinking of key items.</li>
+    </ul>
+<li><b> Accessibility & RTL :</b></li>
+  <ul style="list-style-type: none;">
+  <li class="li_dt">- Use row-reverse for RTL support.</li>
+  <li class="li_dt">- Avoid relying on order for semantic structure.</li>
+  <li class="li_dt">- Use align-items: baseline for mixed content alignment.</li>
+  <li class="li_dt">- Ensure logical tab order and screen reader compatibility.</li>
+</ul>
+<li><b> Debugging Tip :</b></li>
+  <ul style="list-style-type: none;">
+  <li class="li_dt">- Use browser dev tools to inspect flex behavior</li>
+  <li class="li_dt">- Add temporary borders or backgrounds to visualize layout.</li>
+  <li class="li_dt">- Test with different screen sizes and language directions.</li>
+  </ul>
 <h2>🎁 Bonus Tip:</h2>
 <ul>
-  <li>Width, height, top, left, right, and bottom properties don’t work on inline elements. Convert them into <code>block</code> or <code>inline-block</code> to apply these styles.</li>
-  <li><b>Advice:</b> If you don’t understand something, relax—it’s normal. Try it in a real page to understand it better.</li>
+  <li>for the first time i dont have a real bonus for you (am not a god .man 😂😂 ) so i advice you to practice because a css is a design language so u should activate the open mood try evry thing you think about it.so see you next lesson</li>
 </ul>
 
 </body>

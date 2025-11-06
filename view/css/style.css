@@ -226,6 +226,10 @@
           padding: 10px;
           
         }
+        .li_dt{
+          padding:2px;
+          color: #4c0655;
+        }
         .lock-area{
           display: flex;
          

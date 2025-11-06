@@ -18,6 +18,7 @@ btn.addEventListener('click', function (event) {
   });
 });
 }
+// -----------------------------------------------------------login_signup-------------------------------------------------------------------
 function getcour(ad){
   document.getElementById('courForm').addEventListener('submit', function(e) {
   e.preventDefault(); // Prevent form reload
@@ -80,4 +81,53 @@ function getcour(ad){
     console.error('Error:', error);
   });
 });
+}
+//------------------------------------------------cours.php-------------------------------------------------------------------
+function fix_sti_exp() {
+  const stickybtn = document.getElementById('sticky');
+  const fixbtn = document.getElementById('fixed_btn');
+  const s_e = document.getElementById('ex_sticky');
+  const f_e = document.getElementById('ex_fixed');
+
+  // Handle sticky
+  if (stickybtn.checked && s_e.style.display === 'none') {
+    const stik = document.createElement('div');
+    stik.style.position = 'sticky';
+    stik.style.top = '90px';
+    stik.style.left = '0';
+    stik.style.border = '2px solid #000';
+    stik.style.padding = '3px';
+    stik.style.margin = '3px';
+    stik.style.backgroundColor = '#bbf29fff';
+    stik.textContent = 'sticky Paragraph';
+    s_e.style.display = 'block';
+    s_e.appendChild(stik);
+  } else if (!stickybtn.checked && s_e.style.display === 'block') {
+    // Remove sticky div if exists
+    const stik = s_e.querySelector('div');
+    if (stik) s_e.removeChild(stik);
+    s_e.style.display = 'none';
+  }
+
+  // Handle fixed
+  if (fixbtn.checked && f_e.style.display === 'none') {
+    const fix = document.createElement('div');
+    fix.style.position = 'fixed';
+    fix.style.top = '90px';
+    fix.style.left = '0';
+    fix.style.border = '2px solid #000';
+    fix.style.padding = '3px';
+    fix.style.margin = '3px';
+    fix.style.backgroundColor = '#bbf29fff';
+    fix.textContent = 'fixed Paragraph';
+    f_e.style.display = 'block';
+    f_e.appendChild(fix);
+  } else if (!fixbtn.checked && f_e.style.display === 'block') {
+    // Remove fixed div if exists
+    const fix = f_e.querySelector('div');
+    if (fix) f_e.removeChild(fix);
+    f_e.style.display = 'none';
+  }
+
+  console.log("done");
 }

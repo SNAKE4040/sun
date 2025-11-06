@@ -3,14 +3,14 @@
         require_once '../model/cours.php';
         require_once '../model/db.php';
 
-        session_start();
-        if (isset($_SESSION['client']) && $_SESSION['client']) {
-            $client = unserialize($_SESSION['client']);
-        } else {
-            header("Location: controller.php");
-            exit();
-        }
-        $cour = new Cours($database->getConnection());
+        // session_start();
+        // if (isset($_SESSION['client']) && $_SESSION['client']) {
+        //     $client = unserialize($_SESSION['client']);
+        // } else {
+        //     header("Location: controller.php");
+        //     exit();
+        // }
+        // $cour = new Cours($database->getConnection());
     ?>
 <!DOCTYPE html>
 <html lang="en" class="plan_page">

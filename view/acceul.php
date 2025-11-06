@@ -1,13 +1,13 @@
 
 <?php 
-        require_once '../model/client.php';
-        session_start(); 
-        if (isset($_SESSION['client']) && $_SESSION['client']) { 
-            $client = unserialize($_SESSION['client']);
-        } else { 
-            header("Location: controller.php"); 
-            exit(); 
-        } 
+        // require_once '../model/client.php';
+        // session_start(); 
+        // if (isset($_SESSION['client']) && $_SESSION['client']) { 
+        //     $client = unserialize($_SESSION['client']);
+        // } else { 
+        //     header("Location: controller.php"); 
+        //     exit(); 
+        // } 
     ?>
 <!DOCTYPE html>
 <html lang="en">
