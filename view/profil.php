@@ -24,11 +24,13 @@
         
         <div class="profile">
                 <div class="profile-photo">
-                        <?php if ($client->getPhoto()!=null){
-                                echo '<img class="profil" src="'.$client->getPhoto().'" alt="Profile Photo">';
-                        } else {
+                        <?php 
+                        // if ($client->getPhoto()!=null){
+                        //         echo '<img class="profil" src="'.$client->getPhoto().'" alt="Profile Photo">';
+                        // } else {
                                 echo '<img class="profil" src="../src/inco.png" alt="default">';
-                        } ?>
+                        // } 
+                        ?>
                         <form method="post" enctype="multipart/form-data" >
                         <div class="photo">
                         <label for="fileUpload" class="custom-upload"><img src="../src/edit.png" alt=""></label>
@@ -38,25 +40,31 @@
                         </form>
                 </div>
                 <div class="profile-info">
-                       <div class="info-item"> <p>Name: <?php echo "<b class='p_child'>".$client->getName()."</b>"; ?></p><button type="submit" name="modify_name">Modify Name</button></div>
-                       <div class="info-item"> <p>Email: <?php echo "<b class='p_child'>".$client->getEmail()."</b>"; ?></p><button type="submit" name="modify_email">Modify Email</button></div>
+                       <div class="info-item"> <p>Name: 
+                        <?php
+                        //  echo "<b class='p_child'>".$client->getName()."</b>";
+                          ?></p><button type="submit" name="modify_name">Modify Name</button></div>
+                       <div class="info-item"> <p>Email: <?php
+                        // echo "<b class='p_child'>".$client->getEmail()."</b>"; 
+                        ?></p><button type="submit" name="modify_email">Modify Email</button></div>
 
                 </div>
                 <div class="profile-info2">
 
-                        <?php $length = count($client->getLanguage());
-                        if($length > 0) {
-                            for ($i = 0; $i < $length; $i++) {
-                                echo "<div class='info-item2'>";
-                                echo " <div>Language:</div><div> <b class='p_child'>".$client->getLanguage()[$i]."</b></div>";
-                                echo "<div>Level:</div><div><b class='p_child'>".$client->getLevel()[$i]."</b></div>";
-                                echo "<div>Experience:</div><div><b class='p_child'>".$client->getExp()[$i]."</b></div>";
-                            echo "</div>";
-                        }
-                        }
-                        else {
+                        <?php 
+                        // $length = count($client->getLanguage());
+                        // if($length > 0) {
+                        //     for ($i = 0; $i < $length; $i++) {
+                        //         echo "<div class='info-item2'>";
+                        //         echo " <div>Language:</div><div> <b class='p_child'>".$client->getLanguage()[$i]."</b></div>";
+                        //         echo "<div>Level:</div><div><b class='p_child'>".$client->getLevel()[$i]."</b></div>";
+                        //         echo "<div>Experience:</div><div><b class='p_child'>".$client->getExp()[$i]."</b></div>";
+                        //     echo "</div>";
+                        // }
+                        // }
+                        // else {
                             echo "<div class='info-item3'>No languages added yet.</div>";
-                        }
+                        // }
                         ?>
         </div>
          
